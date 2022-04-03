@@ -15,7 +15,6 @@ def len(arr):
     """Mengembalikan banyak isi dari array yang diberikan.
     """
     length = 0
-    slice()
     for i in arr:
         length += 1
 

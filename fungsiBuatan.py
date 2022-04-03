@@ -16,10 +16,15 @@ def cipher(string, seed = 16, modifier = 6969):
 
     strArr = list(string)
     for i in range(fd.len(strArr)):
-        ordinate = ord(i)
-        ciphOrd = chr((ordinate//seed + 1) * seed + ordinate % seed) + modifier
+        ordinate = ord(strArr[i])
+        ciphOrd = (ordinate//seed + 1) * seed + ordinate % seed + modifier
         strArr[i] = chr(ciphOrd % 1114112)
-        string = 
+
+    string = fd.join(strArr, '')
+    return string
 
 
-        
+
+
+if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
+    print(cipher("abcdefghijklmn", modifier= 1))
