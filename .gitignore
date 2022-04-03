@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+
+
+## Tambahin file buat diignore disini
+test.py
+tes.py
+test/
+tes/
