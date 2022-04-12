@@ -192,7 +192,6 @@ def split(string, pattern= ' ', arr = [], ignoreNull = False):
 
 
 
-
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
     isi = ['1', '2', '3', 4]
     print(join(isi, '  '))
