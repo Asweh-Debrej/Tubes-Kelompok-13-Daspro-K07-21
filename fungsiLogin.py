@@ -31,24 +31,25 @@ while perintah != "login" and perintah != "help":
         perintah = input()
 
 #validasi username dan password
-in_username = input("Masukan username: ")
-in_password = input("Masukan password: ")
-a = 0
-for i in range(len(data1)):
-    if in_username in data1[i][1]:
-        if in_password == data1[i][3]:
-            a = 1
-            nama = data1[i][2]
-            print('Halo', nama, '! Selamat data1ng di "Binomo".') #ke validasi perintah admin user
-            role = data1[i][4]
+while perintah == "login":
+    in_username = input("Masukan username: ")
+    in_password = input("Masukan password: ")
+    a = 0
+    for i in range(length(data1)):
+        if in_username in data1[i][1]:
+            if in_password == data1[i][3]:
+                a = 1
+                nama = data1[i][2]
+                print('Halo', nama, '! Selamat data1ng di "Binomo".') #ke validasi perintah admin user
+                role = data1[i][4]
+            else:
+                pass
         else:
             pass
-    else:
-        pass
 
-if a == 0:
-    print("Password atau username salah atau tidak ditemukan.")
-    perintah = input()
+    if a == 0:
+        print("Password atau username salah atau tidak ditemukan.")
+        perintah = input()
 
 #validasi perintah admin user
 perintah = input("Masukkan perintah: ")
