@@ -7,7 +7,6 @@ def kerangAjaib():
     c = 3
 
     arr = ["Ya","Tidak","Bisa Jadi","Mungkin","Tentunya","Tidak Mungkin"]
-
     k = input("Apa pertanyaanmu ? ")
 
     jawab = round(((a)*(rn) + (c))) % m
