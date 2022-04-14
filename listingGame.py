@@ -49,6 +49,7 @@ def selection_sort(_skemaSorting,_arrData):
 
 
 def listing_game(game):
+    # Fungsi utama
     _banyakData = fd.len(game)
     _arrData= [[0 for x in range(6)] for x in range(_banyakData)]
 
