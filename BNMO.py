@@ -6,6 +6,8 @@ import topup
 import history
 import exit
 import cipher as cp
+import listingGame as lg
+import magicConchShell as mcs
 
 _role = "user"
 _loggedIn = False
@@ -68,6 +70,10 @@ def mintaCommand():
                 reg.register()
         elif command == "exit":
             running = exit.exit()
+        elif command = "listing_game_toko":
+            lg.listing_game(_gameData)
+        elif command = "kerangajaib":
+               mcs.kerangAjaib()
         else:
             print("""Perintah tersebut tidak ada
             
