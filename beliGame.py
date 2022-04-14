@@ -1,6 +1,7 @@
 import fungsiDasar as fd
 
 def cekGame(_idGame):
+     # Mengecek apakah game tersebut ada atau tidak
      _panjangArray = fd.len(_gameData)
      _found = False
      for x in range(_panjangArray):
@@ -40,6 +41,7 @@ def gameIndex(_idGame):
                return x
 
 def userIndex():
+     # Mencari indeks dari user tersebut
     _panjangArray = fd.len(_usersData)
     for x in range(_panjangArray):
         if(_usersData[x][0] == _loggedUser[0]):
@@ -47,6 +49,7 @@ def userIndex():
 
 
 def beli():
+     # Fungsi utama
      global _loggedUser,_possession,_gameData,_usersData,_history
      # Fungsi Utama
      _wanted = input("Masukkan ID Game : ")
