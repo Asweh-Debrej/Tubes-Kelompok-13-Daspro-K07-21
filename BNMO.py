@@ -6,6 +6,7 @@ import topup
 import history
 import exit
 import cipher as cp
+import listingGame as lg
 
 _role = "user"
 _loggedIn = False
@@ -68,6 +69,8 @@ def mintaCommand():
                 reg.register()
         elif command == "exit":
             running = exit.exit()
+        elif command = "listing_game_toko":
+            lg.listing_game(_gameData)
         else:
             print("""Perintah tersebut tidak ada
             
