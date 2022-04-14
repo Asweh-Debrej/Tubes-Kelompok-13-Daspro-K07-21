@@ -10,9 +10,19 @@ import cipher as cp
 _role = "user"
 _loggedIn = False
 _valCommand = ["register", "login", ""]
-
-_userData = ["1", "2", "3", "4", "5", 0]
+_loggedUser = ["1", "2", "3", "4", "5", 0]
+"""Data user yang telah login
+1 : id
+2 : username
+3 : nama
+4 : password
+5 : role (admin/user)
+6 : saldo
 """
+
+
+_usersData = [["1", "2", "3", "4", "5", 0]]
+"""Diimport dari user.csv sebagai variabel global
 1 : id
 2 : username
 3 : nama
@@ -22,7 +32,7 @@ _userData = ["1", "2", "3", "4", "5", 0]
 """
 
 _gameData = [["1", "2", "3", 2000, 0, 0]]
-"""
+"""Diimport dari game.csv sebagai variabel global
 1 : id
 2 : nama
 3 : kategori
@@ -32,7 +42,7 @@ _gameData = [["1", "2", "3", 2000, 0, 0]]
 """
 
 _history = [["1", "2", 0, "4", 2000]]
-"""
+"""Diimport dari riwayat.csv sebagai variabel global
 1 : id game
 2 : nama game
 3 : harga game
@@ -41,13 +51,13 @@ _history = [["1", "2", 0, "4", 2000]]
 """
 
 _possession = [["1", "2"]]
-"""
+"""Diimport dari kepemilikan.csv sebagai variabel global
 1 : id game
 2 : id pemilik
 """
 
 def mintaCommand():
-    global _role, _loggedIn, _userData, _gameData, _history, _possession, running
+    global _role, _loggedIn, _usersData, _gameData, _history, _possession, running
     command = input(">>> ").lower()
     if _loggedIn:
         if command == "register":
@@ -76,7 +86,8 @@ running = True
 
 
 if __name__ == "__main__":                          # Inti program
+    # load.load()
     while running:
-        command = mintaCommand()
+        mintaCommand()
 
     print("Selamat menikmati hari anda :(")
