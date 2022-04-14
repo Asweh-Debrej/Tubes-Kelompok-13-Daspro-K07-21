@@ -1,55 +1,24 @@
 import fungsiDasar as fd
 
-_seed = 16
-_cipherModifier = 6
-_maxOrd = 1114112
+def printf(string, width= 48, fence= '|', style= '2', indent= 2):
+    """Mencetak string pada layar dengan pemosisian string masukan
 
+    fence   : pagar/pinggiran yang menjadi pembatas string
 
-def cipher(string, seed= _seed, modifier= _cipherModifier):
-    """Menyandi string masukan. Hasil akan bergantung pada seed yang diberikan.
-    
-    Seed harus berupa faktor dari 1114112.
+    style   : posisi string akan dicetak
+              1/left    = kiri,
+              2/center  = tengah,
+              3/right   = kanan
 
-    Modifier berupa angka bebas
+    indent  : penambahan spasi sebelum pagar
     """
-    if 1114112 % seed != 0:
-        print("""
-        Peringatan : Seed yang dimasukkan bukan salah satu faktor 1114112.
-        Seed akan diubah menjadi 16.
-        """)
-        seed = _seed
-
-    strArr = list(string)
-    for i in range(fd.len(strArr)):
-        ordinate = ord(strArr[i])
-        ciphOrd = (ordinate//seed + 1) * seed - ordinate % seed - 1 + modifier
-        strArr[i] = chr(ciphOrd % _maxOrd)
-
-    string = fd.join(strArr, '')
-    return string
-
-def decipher(string, seed= _seed, modifier= _cipherModifier):
-    """Menguraikan string masukan. Hasil akan bergantung pada seed yang diberikan.
-    
-    Seed harus berupa faktor dari 1114112.
-
-    Modifier berupa angka bebas
-    """
-    if 1114112 % seed != 0:
-        print("""
-        Peringatan : Seed yang dimasukkan bukan salah satu faktor 1114112.
-        Seed akan diubah menjadi 16.
-        """)
-        seed = _seed
-
-    strArr = list(string)
-    for i in range(fd.len(strArr)):
-        ordinate = ord(strArr[i]) - modifier
-        ciphOrd = (ordinate//seed + 1) * seed - ordinate % seed - 1
-        strArr[i] = chr(ciphOrd % _maxOrd)
-
-    string = fd.join(strArr, '')
-    return string
+    print(indent * ' ')
+    if (str(style) == '1') or (str(style).lower() == "left"):
+        print(fence + string + (width - fd.len(string)) * ' ' + fence)
+    elif (str(style) == '2') or (str(style).lower() == "center"):
+        print(fence + ((width - fd.len(string) + 1)//2) * ' ' + string + ((width - fd.len(string))//2) * ' ' + fence)
+    elif (str(style) == '3') or (str(style).lower() == "right"):
+        print(fence + (width - fd.len(string)) * ' ' + string + '|')
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    print(decipher(cipher("abcdefg")))
+    pass

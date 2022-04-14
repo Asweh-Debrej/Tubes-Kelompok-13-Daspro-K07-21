@@ -1,0 +1,2 @@
+import fungsiDasar as fd
+
