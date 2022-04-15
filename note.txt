@@ -1,0 +1,3 @@
+- Janlup var globalnya digantiin
+- command berurut
+- Janlup bagi yang fungsi admin
