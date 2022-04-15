@@ -48,7 +48,6 @@ def selection_sort(_skemaSorting,_arrData):
         print(str(x+1) +'. ' + str(_arrData[x][0]) +"\t | " + str(_arrData[x][1]) + "\t | " + str(_arrData[x][4]) +"\t | " + str(_arrData[x][2]) + "\t | " + str(_arrData[x][3]) + "\t | " + str(_arrData[x][5]))
 
 
-
 def listing_game(game):
     # Fungsi utama
     _banyakData = fd.len(game)
