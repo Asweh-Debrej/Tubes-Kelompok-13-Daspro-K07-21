@@ -68,7 +68,7 @@ def mintaCommand():
                 print("""Hanya admin yang memiliki akses command terebut!
                 
                 Untuk melihat command user, ketik \"help\"""")
-                reg.register()
+                _usersData = reg.register(_usersData)
         elif command == "exit":
             running = exit.exit()
         elif command == "listing_game_toko":    
@@ -86,9 +86,9 @@ def mintaCommand():
             pass                                # login
         elif command == "help":
             pass                                # help
-        elif command
-
-    return command
+        elif command == "register":
+            pass
+            
 
 
 running = True
