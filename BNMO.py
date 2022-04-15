@@ -9,6 +9,7 @@ import cipher as cp
 import listingGame as lg
 import magicConchShell as mcs
 import LihatGameSudahDibeli as lgsd
+import beliGame as bg
 
 _role = "user"
 _loggedIn = False
@@ -77,6 +78,14 @@ def mintaCommand():
             mcs.kerangAjaib()                                   # Kerang Ajaib
         elif command == "list_game":
             lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki user
+        elif command == "buy_game":
+            _wanted = input("Masukkan ID Game: ")               # Membeli game
+            if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
+                _history     = bg._ubahHistory(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+                _gameData    = bg._ubahGameData(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+                _loggedUser  = bg._ubahLoggedUsers(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+                _usersData   = bg._ubahUsersData(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+                _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
         else:
             print("""Perintah tersebut tidak ada
             
