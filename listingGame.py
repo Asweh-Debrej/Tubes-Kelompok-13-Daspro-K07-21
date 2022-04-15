@@ -1,5 +1,6 @@
 import fungsiDasar as fd
 
+
 def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
     _banyakData = fd.len(_arrData)
