@@ -30,3 +30,39 @@ def login(_usersData):
 
     if cek_valid == 0:
         print("Password atau username salah atau tidak ditemukan.")
+
+def admin(x):
+    """" command yang valid untuk admin """
+    cek = True
+    if x == "register" or x == "login" or x == "tambah_game" or x == "ubah_game" or x == "ubah_stok" or x == "list_game_toko" or x == "search_game_at_store" or x == "topup" or x == "help" or x == "save" or x == "exit":
+        cek = True
+    else:
+        cek = False
+    return cek
+
+def user(x):
+    """ command yang valid untuk user """
+    cek = True
+    if x == "login" or x == "list_game_toko" or x == "buy_game" or x == "list_game" or x == "search_my_game" or x == "search_game_at_store" or x == "riwayat" or x == "help" or x == "save" or x == "exit":
+        cek = True
+    else:
+        cek = False
+    return cek
+
+def isValid(_role, command):
+    """ validasi command sesuai _role """
+    cek_command = False
+    if _role == "admin":
+        if admin(command):
+            cek_command = True
+        else:
+            print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.") 
+            print('Untuk melihat command admin, ketik "help"')
+    else: #_role == "user"
+        if user(command):
+            cek_command = True
+        else:
+            print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
+            print('Untuk melihat command user, ketik "help"')
+
+    return cek_command
