@@ -37,7 +37,7 @@ def ubah_Harga(indeks, _gameData):
     return _gameData[indeks][4]
 
 def ubahGame(_gameData):
-    #ganti game
+    """ mengubah spesifikasi data game """
     id_game = input("Masukkan ID game: ")
     if id_game == "":
         print("Field ID harus diisi!")
