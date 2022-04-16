@@ -27,3 +27,4 @@ def ubahStok(_gameData):
     
     if cek_game == 0:
         print("Tidak ada game dengan ID tersebut!")
+        
