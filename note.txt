@@ -1,3 +1,6 @@
 - Janlup var globalnya digantiin
 - command berurut
 - Janlup bagi yang fungsi admin
+- Tambahin fitur cancel
+- Boleh pake library apapun untuk design
+- Posisi pembatas
