@@ -76,9 +76,9 @@ def mintaCommand():
             lg.listing_game(_gameData)                          # Melihat daftar game yang ada 
         elif command == "kerangajaib":
             mcs.kerangAjaib()                                   # Kerang Ajaib
-        elif command == "list_game":
+        elif command == "list_game" and _loggedUser[4] == "user" :
             lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki user
-        elif command == "buy_game":
+        elif command == "buy_game"  and _loggedUser[4] == "user" :
             _wanted = input("Masukkan ID Game: ")               # Membeli game
             if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
                 _history     = bg._ubahHistory(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
