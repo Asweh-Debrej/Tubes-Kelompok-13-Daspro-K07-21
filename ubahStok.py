@@ -1,6 +1,7 @@
 import fungsiDasar as fd
 
 def ubahStok(_gameData):
+    # ubah stok game
     id_game = input("Masukkan ID game: ")
     cek_game = 0
     for i in range (fd.len(_gameData)):
