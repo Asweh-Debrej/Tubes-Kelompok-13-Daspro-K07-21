@@ -6,6 +6,9 @@ import topup
 import history
 import exit
 import cipher as cp
+import listingGame as lg
+import magicConchShell as mcs
+import LihatGameSudahDibeli as lgsd
 
 _role = "user"
 _loggedIn = False
@@ -68,6 +71,12 @@ def mintaCommand():
                 _usersData = reg.register(_usersData)
         elif command == "exit":
             running = exit.exit()
+        elif command == "listing_game_toko":    
+            lg.listing_game(_gameData)                          # Melihat daftar game yang ada 
+        elif command == "kerangajaib":
+            mcs.kerangAjaib()                                   # Kerang Ajaib
+        elif command == "list_game":
+            lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki user
         else:
             print("""Perintah tersebut tidak ada
             
