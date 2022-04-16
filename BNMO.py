@@ -73,9 +73,9 @@ def mintaCommand():
                 _usersData = reg.register(_usersData)
             elif command == "login":
                 print('Anda sudah login! Untuk melihat list command, ketik "help".')
-            elif command == "ubah_game":
+            elif command == "ubah_game":    # Mengubah spesifikasi data game
                 ug.ubahGame(_gameData)
-            elif command == "ubah_stok":
+            elif command == "ubah_stok":    # Mengubah data stok game
                 us.ubahStok(_gameData)
             elif command == "listing_game_toko":    # Melihat daftar game yang ada     
                 lg.listing_game(_gameData)
@@ -89,9 +89,9 @@ def mintaCommand():
                     _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history) 
             elif command == "list_game":
                 lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki 
-            elif command == "help":
+            elif command == "help":     # melihat list command
                 help.help(_role)
-            elif command == "exit":
+            elif command == "exit": 
                 running = exit.exit()
             elif command == "kerangajaib":
                 mcs.kerangAjaib()                                   # Kerang Ajaib
@@ -99,12 +99,12 @@ def mintaCommand():
             pass
     
     else: #_loggedIn = False
-        if command == "login":
+        if command == "login":      
             _loggedUser = login.login(_usersData)
             if _loggedUser != None: #username dan password sudah tervalidasi
                 _role = _loggedUser[4]
                 _loggedIn = True
-        elif command == "help":
+        elif command == "help":     # melihat list command
             help.help(_role)                         
         else:
             # validasi perintah, tidak boleh melakukan apa-apa sebelum login KECUALI HELP
