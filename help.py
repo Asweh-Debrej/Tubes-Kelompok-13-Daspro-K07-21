@@ -1,5 +1,5 @@
 def help(_role):
-    """ mengeluarkan list command """
+    """ mengeluarkan list command berdasarkan _role """
     if _role == "admin": #fungsi yg hanya bisa diakses admin
         print("============ HELP ===========")
         print("1. register - Untuk melakukan registrasi user baru")
