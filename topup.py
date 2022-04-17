@@ -1,7 +1,7 @@
 import fungsiDasar as fd
 
 def askID(usersData):
-    print("-"*50)
+    print("-"*100)
     Type = "id"
     Input = input("""Masukkan "uname" untuk menggunakan user pengguna
     
@@ -11,20 +11,15 @@ def askID(usersData):
         Input, Type = askID(usersData)
     elif Input.lower() == "uname":
         Input, Type = askUName(usersData)
-    else:
-        found = False
-        for data in usersData:
-            if Input == data[0]:
-                found = True
-        if not found:
-            print("ID tersebut tidak ditemukan.")
-            Input, Type = askID(usersData)
+    elif fd.mtrxFind(usersData, Input, 0) == -1:
+        print("ID tersebut tidak ditemukan.")
+        Input, Type = askID(usersData)
 
     return Input, Type
     
 
 def askUName(usersData):
-    print("-"*50)
+    print("-"*100)
     Type = "uname"
     Input = input("""Masukkan "id" untuk menggunakan ID pengguna
 
@@ -34,20 +29,15 @@ def askUName(usersData):
         Input, Type = askUName(usersData)
     elif Input.lower() == "id":
         Input, Type = askID(usersData)
-    else:
-        found = False
-        for data in usersData:
-            if Input == data[1] and not found:
-                found = True
-        if not found:
-            print("Username tersebut tidak ditemukan.")
-            Input, Type = askUName(usersData)
+    elif fd.mtrxFind(usersData, Input, 1) == -1:
+        print("Username tersebut tidak ditemukan.")
+        Input, Type = askUName(usersData)
 
     return Input, Type
             
 
 def askAmount(usersData, person, Type):
-    print("-"*50)
+    print("-"*100)
     amount = fd.strip(input("Jumlah penambahan saldo : "))
     try:
         amount = int(amount)
@@ -60,13 +50,9 @@ def askAmount(usersData, person, Type):
         else:
             idx = 1
 
-        found = False
-        for i in usersData:
-            if i[idx] == person and not found:
-                found = True
-                if i[5] + amount < 0:
-                    print("Jumlah yang dikurangi melebihi saldo yang dimiliki!")
-                    amount = askAmount(usersData, person, Type)
+        if usersData[fd.mtrxFind(usersData, person, idx)][5] + amount < 0:
+            print("Jumlah yang dikurangi melebihi saldo yang dimiliki!")
+            amount = askAmount(usersData, person, Type)
 
         return amount
 
@@ -74,17 +60,12 @@ def askAmount(usersData, person, Type):
 def topup(usersData):
     Input, Type = askUName(usersData)
     
-    idxPerson = 0
-    found = False
     if Type == "id":
         idxType = 0
     else:
         idxType = 1
 
-    for i in range(fd.len(usersData)):
-        if usersData[i][idxType] == Input and not found:
-            found = True
-            idxPerson = i
+    idxPerson = fd.mtrxFind(usersData, Input, idxType)
 
     print("\nSaldo = " + str(usersData[idxPerson][5]))
 
