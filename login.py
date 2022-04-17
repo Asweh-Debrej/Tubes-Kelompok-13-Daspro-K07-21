@@ -57,12 +57,12 @@ def isValid(_role, command):
             cek_command = True
         else:
             print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.") 
-            print('Untuk melihat command admin, ketik "help"')
+            print('Untuk melihat list command, ketik "help"')
     else: #_role == "user"
         if user(command):
             cek_command = True
         else:
             print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
-            print('Untuk melihat command user, ketik "help"')
+            print('Untuk melihat list command, ketik "help"')
 
     return cek_command
