@@ -4,3 +4,9 @@
 - Tambahin fitur cancel
 - Boleh pake library apapun untuk design
 - Posisi pembatas
+- Cara merge
+- Cara resolve konflik
+- Formatting output
+- for i in
+- Syarat register
+- Laporan
