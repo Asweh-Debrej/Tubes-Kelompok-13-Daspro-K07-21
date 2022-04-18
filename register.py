@@ -24,9 +24,9 @@ def askName():
     return name
 
 def askUName(usedUName):
-    """Menanyakan username kepada pengguna
+    """Menanyakan username kepada pengguna.
     
-    Mengembalikan username yang sudah valid"""
+    Mengembalikan username yang sudah valid."""
     print("-"*100)
     uName = input("Masukkan username : ")
     valid = True
@@ -49,9 +49,9 @@ def askUName(usedUName):
     return uName
 
 def askPass(name: str, uName: str):
-    """Menanyakan password kepada pengguna
+    """Menanyakan password kepada pengguna.
     
-    Mengembalikan password yang sudah valid"""
+    Mengembalikan password yang sudah valid."""
     print("-"*100)
     password = cp.cipher(input("Masukkan password : "))             # Disandikan langsung untuk mencegah kebocoran password ketika terjadi kebocoran memori
     if len(password) < 6:
@@ -66,9 +66,9 @@ def askPass(name: str, uName: str):
     return password
 
 def register(usersData):
-    """Mendaftarkan pengguna baru
+    """Mendaftarkan pengguna baru.
 
-    Mengembalikan matriks usersData yang sudah dimodifikasi"""
+    Mengembalikan matriks usersData yang sudah dimodifikasi."""
     usedUName = []
     for i in fd.sliced(usersData, 1):
         usedUName = fd.append(usedUName, i[1])
