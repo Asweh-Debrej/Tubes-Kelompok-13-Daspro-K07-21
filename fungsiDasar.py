@@ -137,7 +137,7 @@ def find(arr, X):
 
     for i in range(0, len(arr) - len(X) + 1):
         slicedArr = sliced(arr, i, i + len(X))
-        if slicedArr == X or slicedArr == X:
+        if slicedArr == X:
             return i
     
     return -1
@@ -154,6 +154,17 @@ def fullFind(arr, X):
             append(indexes, i)
 
     return indexes
+
+
+def mtrxFind(matrix, X, idxSlug):
+    """Mengembalikan indeks list pada matrix yang ditemukan X merupakan elemen berindex idxSlug dari list tersebut
+    
+    Mengembalikan -1 jika tidak ditemukan."""
+    for i in range(len(matrix)):
+        if matrix[i][idxSlug] == X:
+            return i
+
+    return -1
 
 
 def join(arr, infix):
@@ -189,7 +200,7 @@ def valIn(val, arr):
     """Mengembalikan True apabila val ditemukan dalam arr, False jika tidak
     """
     found = False
-    if type(arr) == str and val in arr:
+    if type(arr) == str and find(arr, val) != -1:
         found = True
     elif type(arr) == list or type(arr) == tuple:
         i = 0
