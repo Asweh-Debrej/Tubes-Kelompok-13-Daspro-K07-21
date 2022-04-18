@@ -3,9 +3,9 @@ import fungsiDasar as fd
 def askID(usersData):
     print("-"*100)
     Type = "id"
-    Input = input("""Masukkan "uname" untuk menggunakan user pengguna
+    Input = fd.strip(input("""Masukkan "uname" untuk menggunakan user pengguna
     
-        ID : """)
+        ID : """))
     if not Input:
         print("ID tidak bisa kosong!")
         Input, Type = askID(usersData)
@@ -21,9 +21,9 @@ def askID(usersData):
 def askUName(usersData):
     print("-"*100)
     Type = "uname"
-    Input = input("""Masukkan "id" untuk menggunakan ID pengguna
+    Input = fd.strip(input("""Masukkan "id" untuk menggunakan ID pengguna
 
-        Username : """)
+        Username : """))
     if not Input:
         print("Username tidak bisa kosong!")
         Input, Type = askUName(usersData)
@@ -39,11 +39,16 @@ def askUName(usersData):
 def askAmount(usersData, person, Type):
     print("-"*100)
     amount = fd.strip(input("Jumlah penambahan saldo : "))
+    if amount == "batal":
+        return
     try:
         amount = int(amount)
     except:
-        print("Masukan hanya boleh berbentuk bilangan bulat!")
-        amount = askAmount(usersData, person, Type)
+        if not amount:
+            amount = 0
+        else:
+            print("Masukan hanya boleh berbentuk bilangan bulat!")
+            amount = askAmount(usersData, person, Type)
     else:
         if Type == "id":
             idx = 0
