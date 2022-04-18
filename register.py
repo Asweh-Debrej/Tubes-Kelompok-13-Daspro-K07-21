@@ -15,6 +15,7 @@ def askName():
     """Menanyakan nama pengguna
     
     Mengembalikan nama yang sudah valid"""
+    print("-"*100)
     name = input("Masukkan nama : ")
     if not name:
         print("Nama tidak boleh kosong!")
@@ -26,10 +27,11 @@ def askUName(usedUName):
     """Menanyakan username kepada pengguna
     
     Mengembalikan username yang sudah valid"""
+    print("-"*100)
     uName = input("Masukkan username : ")
     valid = True
     for i in uName:
-        if i not in _uNameChars:
+        if fd.find(_uNameChars, i) == -1:
             valid = False
     if not uName:
         print("Username tidak boleh kosong!")
@@ -40,7 +42,7 @@ def askUName(usedUName):
     elif fd.len(uName) < 6:
         print("Username harus memiliki minimal 6 karakter!")
         uName = askUName(usedUName)
-    elif uName in usedUName:
+    elif fd.find(usedUName, uName) != -1:
         print("Username tersebut telah digunakan")
         uName = askUName(usedUName)
     
@@ -50,12 +52,13 @@ def askPass(name: str, uName: str):
     """Menanyakan password kepada pengguna
     
     Mengembalikan password yang sudah valid"""
+    print("-"*100)
     password = cp.cipher(input("Masukkan password : "))             # Disandikan langsung untuk mencegah kebocoran password ketika terjadi kebocoran memori
     if len(password) < 6:
         print("Panjang password tidak boleh kurang dari 6 karakter!")
         password = askPass(name, uName)
-    elif cp.decipher(password).lower() in name.lower() or  cp.decipher(password).lower() in uName.lower():
-        print("Password tidak boleh mengandung bagian dari nama atau username!")
+    elif fd.find(name.lower(), cp.decipher(password).lower()) != -1  or fd.find(uName.lower(), cp.decipher(password).lower()) != -1:
+        print("Password tidak boleh merupakan bagian dari nama atau username!")
         password = askPass(name, uName)
     elif fd.valAll(cp.decipher(password)[0], cp.decipher(password)):
         print("Password harus memiliki karakter yang berbeda!")
@@ -79,5 +82,5 @@ def register(usersData):
 
     
 if __name__ == "__main__":
-    data = [['1', 'aan'], ['2', 'aan-'], ['3', 'aan--'], ['4', 'aan---'], ['5', 'aan----']]
-    print(register(data))
+    import tes
+    print(register(tes.usersData))
