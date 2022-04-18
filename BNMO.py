@@ -65,7 +65,7 @@ _possession = [["1", "2"]]
 """
 
 def mintaCommand():
-    global _role, _loggedIn, _usersData, _gameData, _history, _possession, running
+    global _role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser
     command = input(">>> ").lower()
     command_valid = 0
     for i in range (fd.len(_valCommand)):
