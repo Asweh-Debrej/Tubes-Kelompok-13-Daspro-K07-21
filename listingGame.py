@@ -44,8 +44,17 @@ def selection_sort(_skemaSorting,_arrData):
         _arrData[x][3]  = _temp3
         _arrData[x][4]  = _temp4
 
+    # cari string terpanjang
+    _terpanjang = 0
     for x in range(_banyakData):
-        print(str(x+1) +'. ' + str(_arrData[x][0]) +"\t | " + str(_arrData[x][1]) + "\t | " + str(_arrData[x][4]) +"\t | " + str(_arrData[x][2]) + "\t | " + str(_arrData[x][3]) + "\t | " + str(_arrData[x][5]))
+        for y in range(6):
+            if(len(str(_arrData[x][y])) > _terpanjang):
+                _terpanjang = len(str(_arrData[x][y]))
+
+    s = '{: ^' + str(_terpanjang) +'}'
+
+    for x in range(_banyakData):
+        print(str(x + 1) + '. ' + s.format(_arrData[x][0]) + " | " + s.format(_arrData[x][1]) + " | " + s.format(_arrData[x][4]) + "\t | " + s.format(_arrData[x][2]) + "\t | " + s.format(_arrData[x][3]) + "\t | " + s.format(_arrData[x][5]))
 
 
 def listing_game(game):
