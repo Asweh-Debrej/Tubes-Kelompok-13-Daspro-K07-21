@@ -15,6 +15,15 @@ def maxLengths(matrix):
 
     return lengths
 
+
+def merge(arr1, arr2):
+    for val in arr2:
+        if fd.find(arr1, val) == -1:
+            arr1 = fd.append(arr1, val)
+
+    return arr1
+
+
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
     import tes
     print(maxLengths(tes.gameData))
