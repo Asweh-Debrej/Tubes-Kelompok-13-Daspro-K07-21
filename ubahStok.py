@@ -4,7 +4,7 @@ def ubahStok(_gameData):
     """ mengubah data stok game """
     id_game = input("Masukkan ID game: ")
     cek_game = 0
-    for i in range (fd.len(_gameData)):
+    for i in range (1, fd.len(_gameData)):
         if id_game == _gameData[i][0]:
             cek_game = 1
             stok = _gameData[i][5]
