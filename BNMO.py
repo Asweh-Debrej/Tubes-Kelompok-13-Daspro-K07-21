@@ -127,8 +127,7 @@ def mintaCommand():
                         mcs.kerangAjaib()      # Kerang Ajaib
                     elif command == "tictactoe" :
                         tt.tictactoe()
-                    elif command =="load"
-                        loading.load()
+                    
                 else: # command tidak valid dengan _role
                     pass
 
@@ -155,7 +154,8 @@ def mintaCommand():
 running = True
 
 
-if __name__ == "__main__":                          # Inti program
+if __name__ == "__main__":   # Inti program
+    loading.load()
     # load.load()
     while running:
         mintaCommand()
