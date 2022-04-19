@@ -68,7 +68,7 @@ def askPass(name: str, uName: str):
 def register(usersData):
     """Mendaftarkan pengguna baru.
 
-    Mengembalikan matriks usersData yang sudah dimodifikasi."""
+    Mengembalikan matriks usersData yang sudah diubah."""
     usedUName = []
     for i in fd.sliced(usersData, 1):
         usedUName = fd.append(usedUName, i[1])
