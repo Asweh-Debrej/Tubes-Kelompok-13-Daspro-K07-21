@@ -1,6 +1,9 @@
 import fungsiDasar as fd
 
 def askID(usersData):
+    """Meminta ID pengguna.
+
+    Mengembalikan ID yang sudah valid."""
     print("-"*100)
     Type = "id"
     Input = fd.strip(input("""Masukkan "uname" untuk menggunakan user pengguna
@@ -19,6 +22,9 @@ def askID(usersData):
     
 
 def askUName(usersData):
+    """Meminta username pengguna.
+    
+    Mengembalikan username yang sudah valid."""
     print("-"*100)
     Type = "uname"
     Input = fd.strip(input("""Masukkan "id" untuk menggunakan ID pengguna
@@ -37,6 +43,9 @@ def askUName(usersData):
             
 
 def askAmount(usersData, person, Type):
+    """Meminta jumlah penambahan saldo.
+    
+    Mengembalikan nilai yang sudah valid"""
     print("-"*100)
     amount = fd.strip(input("Jumlah penambahan saldo : "))
     if amount == "batal":
@@ -63,6 +72,9 @@ def askAmount(usersData, person, Type):
 
 
 def topup(usersData):
+    """Menambahkan saldo pengguna.
+
+    Mengembalikan matriks usersData yang telah diubah."""
     Input, Type = askUName(usersData)
     
     if Type == "id":
