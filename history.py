@@ -22,5 +22,4 @@ def history(history, loggedUser):
 
 
 if __name__ == "__main__":
-    import tes
-    history(tes.history)
+    pass

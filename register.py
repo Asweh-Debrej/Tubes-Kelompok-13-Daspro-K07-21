@@ -82,5 +82,4 @@ def register(usersData):
 
     
 if __name__ == "__main__":
-    import tes
-    print(register(tes.usersData))
+    pass
