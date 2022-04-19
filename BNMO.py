@@ -83,7 +83,7 @@ def mintaCommand():
                         ug.ubahGame(_gameData)
                     elif command == "ubah_stok":
                         us.ubahStok(_gameData)
-                    elif command == "listing_game_toko":    # Melihat daftar game yang ada     
+                    elif command == "list_game_toko":    # Melihat daftar game yang ada     
                         lg.listing_game(_gameData)
                     elif command == "buy_game":
                         _wanted = input("Masukkan ID Game: ")               # Membeli game
