@@ -10,6 +10,8 @@ import listingGame as lg
 import magicConchShell as mcs
 import LihatGameSudahDibeli as lgsd
 import beliGame as bg
+import save as sv
+
 
 _role = "user"
 _loggedIn = False
@@ -76,6 +78,16 @@ def mintaCommand():
             lg.listing_game(_gameData)                          # Melihat daftar game yang ada 
         elif command == "kerangajaib":
             mcs.kerangAjaib()                                   # Kerang Ajaib
+        elif command == "save":
+            cari = input("Masukkan nama folder penyimpanan : ")
+            print("")
+            print("Saving")
+            sv.simpan(_possession,"kepemilikan",cari)
+            sv.simpan(_gameData,"game",cari)
+            sv.simpan(_usersData,"user",cari)
+            sv.simpan(_history,"riwayat",cari)
+            print("Data telah disimpan pada folder " + cari +"!")    
+        
         elif command == "list_game" and _loggedUser[4] == "user" :
             lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki user
         elif command == "buy_game"  and _loggedUser[4] == "user" :
