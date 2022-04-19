@@ -20,10 +20,21 @@ def lihat(_userId,_gameData,_possession):
                 _daftarGame[_count] = _possession[x][0]
                 _count +=1
 
+        # Cari terpanjang
+        _terpanjang = 0
         for x in range(_count):
             for y in range(_jumlahGame):
                 if(_daftarGame[x] == _gameData[y][0]):
-                    print(str(x+1) +'. ' + str(_gameData[y][0]) + '\t | ' + str(_gameData[y][1]) + '\t | ' + str(_gameData[y][2]) + "\t | " + str(_gameData[y][3]) + "\t | " + str(_gameData[y][4]))
+                    for z in range(6):
+                        if(len(str(_gameData[y][z])) > _terpanjang):
+                            _terpanjang = len(str(_gameData[y][z]))
+
+        s = '{: ^' + str(_terpanjang) + '}'     # Format penulisan
+
+        for x in range(_count):
+            for y in range(_jumlahGame):
+                if(_daftarGame[x] == _gameData[y][0]):
+                    print(str(x+1) +'. ' + s.format(_gameData[y][0]) +' | ' + s.format(_gameData[y][1]) + ' | ' +  s.format(_gameData[y][2]) + ' | ' + s.format(_gameData[y][3]) + ' | ' + s.format(_gameData[y][4]))
                     break
 
 
