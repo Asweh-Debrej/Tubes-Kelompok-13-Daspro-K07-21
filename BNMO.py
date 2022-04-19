@@ -1,7 +1,7 @@
 import fungsiDasar as fd
 import fungsiBuatan as fb
 import register as reg
-import login as login
+import login
 import addGame as ag
 import ubahGame as ug
 import ubahStok as us
@@ -68,7 +68,7 @@ _possession = [["1", "2"]]
 
 def mintaCommand():
     global _role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser
-    command = input(">>> ").lower()
+    command = fd.strip(input(">>> ").lower())
     command_valid = 0
     for i in range (fd.len(_valCommand)):
         if command == _valCommand[i]:   # validasi input command
@@ -79,6 +79,8 @@ def mintaCommand():
                         _usersData = reg.register(_usersData)
                     elif command == "login":
                         print('Anda sudah login! Untuk melihat list command, ketik "help".')
+                    elif command == "tambah_game":
+                        _gameData = ag.addGame(_gameData)
                     elif command == "ubah_game":
                         ug.ubahGame(_gameData)
                     elif command == "ubah_stok":
@@ -95,6 +97,10 @@ def mintaCommand():
                             _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history) 
                     elif command == "list_game":
                         lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki 
+                    elif command == "riwayat":
+                        history.history(_gameData)
+                    elif command == "topup":
+                        _usersData = topup.topup(_usersData)
                     elif command == "help":
                         help.help(_role)
                     elif command == "exit":

@@ -1,0 +1,17 @@
+0 abs
+1 len
+0 toList
+1 append
+1 sliced
+1 strip
+0 replace
+1 find
+0 sorted
+0 count
+1 find
+0 fullFind
+1 mtrxFind
+1 join
+1 split
+0 valIn
+0 valAll
