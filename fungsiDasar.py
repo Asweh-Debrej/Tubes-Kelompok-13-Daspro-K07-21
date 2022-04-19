@@ -66,6 +66,9 @@ def sliced(arr, start = 0, stop = None, step = 1):
 def strip(string: str, chars: str = ' '):
     """Menghapus chars yang berada pada awal atau akhir string
     """
+    if not string:
+        return ''
+
     front = True
     while string[0] == chars[0] and front:
         for i in chars:
