@@ -5,7 +5,7 @@ def history(history, loggedUser):
     """Menampilkan riwayat pembelian dari matriks berukuran minimal 5x1
     """
     if fd.mtrxFind(history, loggedUser[0], 3) == -1:
-        print("Anda belum pernah membeli game apapun. Ketik \"buy_game\" untuk membeli game.")
+        print("Anda belum pernah membeli game apapun. Ketik \"buy game\" untuk membeli game.")
         return
 
     lengths = fb.maxLengths(history)
