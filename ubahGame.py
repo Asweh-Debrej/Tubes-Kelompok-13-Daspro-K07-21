@@ -43,7 +43,7 @@ def ubahGame(_gameData):
         print("Field ID harus diisi!")
     else:
         cek_game = 0
-        for i in range (fd.len(_gameData)):
+        for i in range (1, fd.len(_gameData)):
             if id_game == _gameData[i][0]:
                 cek_game = 1
 
