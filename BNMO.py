@@ -15,6 +15,7 @@ import history
 import help as help
 import exit
 import save as sv
+import Fungsi15Load as loading
 import cipher as cp
 import magicConchShell as mcs
 import tictactoe as tt
@@ -126,6 +127,8 @@ def mintaCommand():
                         mcs.kerangAjaib()      # Kerang Ajaib
                     elif command == "tictactoe" :
                         tt.tictactoe()
+                    elif command =="load"
+                        loading.load()
                 else: # command tidak valid dengan _role
                     pass
 
