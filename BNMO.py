@@ -17,6 +17,7 @@ import exit
 import save as sv
 import cipher as cp
 import magicConchShell as mcs
+import tictactoe as tt
 
 
 _role = "user"
@@ -122,7 +123,9 @@ def mintaCommand():
                         print("Data telah disimpan pada folder " + cari +"!")
                       
                     elif command == "kerangajaib":
-                        mcs.kerangAjaib()                                   # Kerang Ajaib
+                        mcs.kerangAjaib()      # Kerang Ajaib
+                    elif command == "tictactoe" :
+                        tt.tictactoe()
                 else: # command tidak valid dengan _role
                     pass
 
