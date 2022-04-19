@@ -114,5 +114,4 @@ def addGame(gameData):
 
 
 if __name__=="__main__":
-    import tes
-    print(addGame(tes.gameData))
+    pass

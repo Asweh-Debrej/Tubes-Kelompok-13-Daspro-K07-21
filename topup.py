@@ -101,5 +101,4 @@ def topup(usersData):
 
 
 if __name__ == "__main__":
-    import tes
-    print(topup(tes.usersData))
+    pass
