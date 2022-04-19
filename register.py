@@ -16,7 +16,7 @@ def askName():
     
     Mengembalikan nama yang sudah valid"""
     print("-"*100)
-    name = input("Masukkan nama : ")
+    name = fd.strip(input("Masukkan nama : "))
     if not name:
         print("Nama tidak boleh kosong!")
         askName()
