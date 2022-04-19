@@ -12,8 +12,10 @@ import topup
 import history
 import help as help
 import exit
+import save as sv
 import cipher as cp
 import magicConchShell as mcs
+
 
 _role = "user"
 _loggedIn = False
@@ -96,12 +98,22 @@ def mintaCommand():
                     elif command == "help":
                         help.help(_role)
                     elif command == "exit":
-                        running = exit.exit()
+                        running = exit.exit(_usersData, _gameData, _history, _possession)
+                    elif command == "save":
+                        cari = input("Masukkan nama folder penyimpanan : ")         # Melakukan save
+                        print("")
+                        print("Saving")
+                        sv.simpan(_possession,"kepemilikan",cari)
+                        sv.simpan(_gameData,"game",cari)
+                        sv.simpan(_usersData,"user",cari)
+                        sv.simpan(_history,"riwayat",cari)
+                        print("Data telah disimpan pada folder " + cari +"!")
+                      
                     elif command == "kerangajaib":
                         mcs.kerangAjaib()                                   # Kerang Ajaib
                 else: # command tidak valid dengan _role
                     pass
-            
+
             else: #_loggedIn = False
                 if command == "login":
                     _loggedUser = login.login(_usersData)
