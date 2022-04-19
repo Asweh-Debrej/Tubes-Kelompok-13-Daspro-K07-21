@@ -1,24 +1,20 @@
 import fungsiDasar as fd
 
-def printf(string, width= 48, fence= '|', style= '2', indent= 2):
-    """Mencetak string pada layar dengan pemosisian string masukan
+def maxLengths(matrix):
+    if not matrix:
+        return 0
 
-    fence   : pagar/pinggiran yang menjadi pembatas string
+    lengths = [0 for i in range(len(matrix[0]))]
+    for i in range(fd.len(matrix[0])):
+        lengths[i] = fd.len(matrix[0][i])
 
-    style   : posisi string akan dicetak
-              1/left    = kiri,
-              2/center  = tengah,
-              3/right   = kanan
+    for i in range(1, fd.len(matrix)):
+        for j in range(fd.len(matrix[i])):
+            if fd.len(matrix[i][j]) > lengths[j]:
+                lengths[j] = fd.len(matrix[i][j])
 
-    indent  : penambahan spasi sebelum pagar
-    """
-    print(indent * ' ')
-    if (str(style) == '1') or (str(style).lower() == "left"):
-        print(fence + string + (width - fd.len(string)) * ' ' + fence)
-    elif (str(style) == '2') or (str(style).lower() == "center"):
-        print(fence + ((width - fd.len(string) + 1)//2) * ' ' + string + ((width - fd.len(string))//2) * ' ' + fence)
-    elif (str(style) == '3') or (str(style).lower() == "right"):
-        print(fence + (width - fd.len(string)) * ' ' + string + '|')
+    return lengths
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    pass
+    import tes
+    print(maxLengths(tes.gameData))
