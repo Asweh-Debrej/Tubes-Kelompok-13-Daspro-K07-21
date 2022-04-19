@@ -7,9 +7,11 @@ def abs(X: float):
     return X
 
 
-def len(arr):
+def len(arr):       # Penggunaan len(arr) dengan arr bertipe 
     """Mengembalikan banyak isi dari array yang diberikan.
     """
+    if type(arr) == int or type(arr) == float:
+        arr = str(arr)
     length = 0
     for i in arr:
         length += 1
