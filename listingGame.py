@@ -1,5 +1,6 @@
 import fungsiDasar as fd
 
+
 def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
     _banyakData = fd.len(_arrData)
@@ -45,7 +46,6 @@ def selection_sort(_skemaSorting,_arrData):
 
     for x in range(_banyakData):
         print(str(x+1) +'. ' + str(_arrData[x][0]) +"\t | " + str(_arrData[x][1]) + "\t | " + str(_arrData[x][4]) +"\t | " + str(_arrData[x][2]) + "\t | " + str(_arrData[x][3]) + "\t | " + str(_arrData[x][5]))
-
 
 
 def listing_game(game):

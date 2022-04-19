@@ -183,8 +183,35 @@ def split(string, pattern= ' ', arr = [], ignoreNull = False):
             return arr
     else:
         return append(arr, string)
-    
 
+
+def valIn(val, arr):
+    """Mengembalikan True apabila val ditemukan dalam arr, False jika tidak
+    """
+    found = False
+    if type(arr) == str and val in arr:
+        found = True
+    elif type(arr) == list or type(arr) == tuple:
+        i = 0
+        while not found and i < len(arr):
+            if arr[i] == val:
+                found = True
+            i += 1
+    
+    return found
+
+
+def valAll(val, arr):
+    """Mengembalikan True apabila semua isi arr adalah val, False jika tidak
+    """
+    allIn = True
+    i = 0
+    while allIn and i < len(arr):
+        if arr[i] != val:
+            allIn = False
+        i += 1
+    
+    return allIn
 
 
 
@@ -193,5 +220,5 @@ def split(string, pattern= ' ', arr = [], ignoreNull = False):
 
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    isi = ['1', '2', '3', 4]
-    print(join(isi, '  '))
+    isi = ['1', '1', '1', '1']
+    print(valAll('1', isi))
