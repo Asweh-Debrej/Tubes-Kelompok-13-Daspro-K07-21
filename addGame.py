@@ -4,6 +4,7 @@ def askGName(gameData):
     """Meminta nama game.
     
     Mengembalikan nama game yang sudah valid."""
+    print("-"*100)
     gName = fd.strip(input("Nama game : "))
     if not gName:
         print("Nama game tidak boleh kosong!")
@@ -19,6 +20,7 @@ def askCategory():
     """Meminta nama kategori.
     
     Mengembalikan nama kategori yang sudah valid."""
+    print("-"*100)
     category = fd.strip(input("Kategori : "))
     if not category:
         print("Kategori tidak boleh kosong!")
@@ -31,6 +33,7 @@ def askRelease():
     """Meminta tahun rilis game.
     
     Mengembalikan tahun yang sudah valid."""
+    print("-"*100)
     releaseYear = fd.strip(input("Tahun rilis : "))
     try:
         releaseYear = int(releaseYear)
@@ -53,6 +56,7 @@ def askPrice():
     """Meminta harga game.
     
     Mengembalikan harga yang sudah valid."""
+    print("-"*100)
     price = fd.strip(input("Harga game : "))
     try:
         price = int(price)
@@ -75,6 +79,7 @@ def askStock():
     """Meminta jumlah stok game.
 
     Mengembalikan jumlah stok yang sudah valid."""
+    print("-"*100)
     stock = fd.strip(input("Jumlah stok : "))
     try:
         stock = int(stock)
