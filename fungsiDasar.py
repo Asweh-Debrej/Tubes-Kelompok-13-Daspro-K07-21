@@ -7,6 +7,16 @@ def abs(X: float):
     return X
 
 
+def sum(arr):
+    """Mengembalikan jumlah bilangan dari seluruh elemen arr.
+    """
+    result = 0
+    for i in arr:
+        result += i
+    
+    return result
+
+
 def len(arr):       # Penggunaan len(arr) dengan arr bertipe 
     """Mengembalikan banyak isi dari array yang diberikan.
     """
