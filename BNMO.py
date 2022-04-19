@@ -6,15 +6,19 @@ import addGame as ag
 import ubahGame as ug
 import ubahStok as us
 import listingGame as lg
+import Fungsi10 as F10
+import Fungsi11 as F11
 import beliGame as bg
 import lihatGameSudahDibeli as lgsd
 import topup
 import history
-import help as help
+import help
 import exit
 import save as sv
+import Fungsi15Load as loading
 import cipher as cp
 import magicConchShell as mcs
+import tictactoe as tt
 
 
 _role = "user"
@@ -118,6 +122,10 @@ def mintaCommand():
                         _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history) 
                 elif command == "listgame":
                     lgsd.lihat(_loggedUser[0],_gameData,_possession)            # melihat daftar game yang dimiliki 
+                elif command == "searchmygame":
+                    F10.search_my_game(_possession,_gamedata,_loggedUser)
+                elif coand == "searchgameatstore":
+                    F11.search_game_at_store(_gamedata)
                 elif command == "riwayat":
                     history.history(_gameData, _loggedUser)
                 elif command == "topup":
@@ -162,10 +170,9 @@ def mintaCommand():
 running = True
 
 
-if __name__ == "__main__":                          # Inti program
-    import tes
-    _usersData, _gameData, _history, _possession = tes.usersData, tes.gameData, tes.history, tes.possession
-    # load.load()
+
+if __name__ == "__main__":   # Inti program
+    loading.load()
     while running:
         mintaCommand()
 

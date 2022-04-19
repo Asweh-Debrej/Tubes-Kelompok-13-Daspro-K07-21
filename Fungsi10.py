@@ -1,7 +1,7 @@
 import fungsiDasar as fd
 
-def search_my_game():
-     global _possession,_gamedata,_loggedUser
+def search_my_game(_possession,_gamedata,_loggedUser):
+     
      username = _loggedUser[0]
      x =fd.len(_possession) 
      k= fd.len(_gamedata)
