@@ -7,6 +7,7 @@ import ubahGame as ug
 import ubahStok as us
 import listingGame as lg
 import Fungsi10 as F10
+import Fungsi11 as F11
 import beliGame as bg
 import lihatGameSudahDibeli as lgsd
 import topup
@@ -100,6 +101,8 @@ def mintaCommand():
                         lgsd.lihat(_loggedUser[0],_gameData,_possession)    # melihat daftar game yang dimiliki 
                     elif command == "search_my_game":
                         F10.search_my_game(_possession,_gamedata,_loggedUser)
+                    elif coand == "search_game_at_store":
+                        F11.search_game_at_store(_gamedata)
                     elif command == "riwayat":
                         history.history(_gameData)
                     elif command == "topup":
