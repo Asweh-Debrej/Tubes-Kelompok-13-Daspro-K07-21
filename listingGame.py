@@ -60,19 +60,22 @@ def selection_sort(_skemaSorting,_arrData):
 def listing_game(game):
     # Fungsi utama
     _banyakData = fd.len(game)
-    _arrData= [[0 for x in range(6)] for x in range(_banyakData)]
+    _arrData= [[0 for x in range(6)] for x in range(1,_banyakData)]
 
-    for x in range(_banyakData):
-        _arrData[x][0]  = game[x][0]
-        _arrData[x][1]  = game[x][1]
-        _arrData[x][2]  = game[x][2]
-        _arrData[x][3]  = game[x][3]
-        _arrData[x][4]  = game[x][4]
-        _arrData[x][5]  = game[x][5]
+    for x in range(1,_banyakData):
+        _arrData[x-1][0]  = game[x][0]
+        _arrData[x-1][1]  = game[x][1]
+        _arrData[x-1][2]  = game[x][2]
+        _arrData[x-1][3]  = game[x][3]
+        _arrData[x-1][4]  = game[x][4]
+        _arrData[x-1][5]  = game[x][5]
 
     _skemaSorting = input("Skema sorting : ")
 
+
     if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
         selection_sort(_skemaSorting,_arrData)
+
     else:
         print("Skema sorting tidak valid")
+
