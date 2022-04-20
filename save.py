@@ -45,11 +45,10 @@ def simpan(_arrData, tipe,cari):
     else:
         _gabung = [["game_id","nama","harga","user_id","tahun_beli"]]
         buka = os.path.join(os.getcwd(), cari, "riwayat.csv")
-    _gabung += _ubahJadiString(_arrData)
+
+    _hasil = _ubahJadiString(_gabung) + _ubahJadiString(_arrData)
     a = open(buka,"w")
-    a.writelines(_gabung)
-
-
+    a.writelines(_hasil)
 
 
 
