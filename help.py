@@ -1,6 +1,6 @@
 def help(_role):
-    """ mengeluarkan list command berdasarkan _role """
-    if _role == "admin": #fungsi yg hanya bisa diakses admin
+    # mengeluarkan list command berdasarkan _role
+    if _role == "admin": # fungsi yg hanya bisa diakses admin
         print()
         print()
         print("===============================================  HELP  ==============================================")
@@ -16,7 +16,8 @@ def help(_role):
         print("9. help                  - Untuk memberikan panduan penggunaan sistem")
         print("10. save                 - Untuk melakukan penyimpanan data ke dalam file setelah dilakukan perubahan")
         print("11. exit                 - Untuk keluar dari aplikasi")
-    else: # _role == "user"
+    else: # fungsi yang hanya bisa diakses user
+        # _role == "user"
         print()
         print()
         print("================================================ HELP ===============================================")
