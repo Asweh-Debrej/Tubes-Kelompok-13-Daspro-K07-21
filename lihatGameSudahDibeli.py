@@ -2,6 +2,7 @@ import fungsiDasar as fd
 
 def lihat(_userId,_gameData,_possession):
     # Cari ada berapa jumlah game yang kita miliki
+    
     _jumlahGame = 0
     _panjangPossession = fd.len(_possession)
     for x in range(_panjangPossession):
