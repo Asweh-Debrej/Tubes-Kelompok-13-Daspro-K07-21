@@ -3,14 +3,14 @@ import cipher as cp
 
 def login(_usersData):
     """ validasi input username dan password ketika login """
-    in_username = input("Masukkan username: ")
-    in_password = cp.cipher(input("Masukkan password: "))
-    cek_valid = 0
+    _inUsername = input("Masukkan username: ")
+    _inPassword = cp.cipher(input("Masukkan password: "))
+    _cekValid = 0
     _loggedUser = ["0","1","2","3","4","5"]
     for i in range(1, fd.len(_usersData)):
-        if in_username == _usersData[i][1]:
-            if in_password == _usersData[i][3]:
-                cek_valid = 1
+        if _inUsername == _usersData[i][1]:
+            if _inPassword == _usersData[i][3]:
+                _cekValid = 1
 
                 # mengambil data user/admin yang login dan memindahkan data ke list _loggedUser
                 _loggedUser[0] = _usersData[i][0]
@@ -29,5 +29,5 @@ def login(_usersData):
         else:
             pass
 
-    if cek_valid == 0:
+    if _cekValid == 0:
         print("Password atau username salah atau tidak ditemukan.")
