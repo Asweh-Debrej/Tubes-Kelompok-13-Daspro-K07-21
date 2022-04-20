@@ -1,7 +1,7 @@
 import fungsiDasar as fd
 
-def search_my_game():
-     global _possession,_gamedata,_loggedUser
+def search_my_game(_possession,_gamedata,_loggedUser):
+     
      username = _loggedUser[0]
      x =fd.len(_possession) 
      k= fd.len(_gamedata)
@@ -10,7 +10,7 @@ def search_my_game():
      print("Daftar game pada inventory yang memenuhi kriteria: ")
      
      t=0
-     if(str1==[] and str2 ==[]):
+     if(str1=='' and str2 ==''):
           
           for m in range (x):
                
@@ -30,7 +30,7 @@ def search_my_game():
                if(t==0):
                     print()
                     print("Tidak ada game pada inventory-mu yang memenuhi kriteria.",end="")
-     elif(str1!=[] and str2!=[]):
+     elif(str1!='' and str2!=''):
 
           for m in range (x):
                if(_possession[m][1]==username):
@@ -50,7 +50,7 @@ def search_my_game():
                print()
                print("Tidak ada game pada inventory-mu yang memenuhi kriteria.",end="")
 
-     elif(str1!=[] and str2==[]):
+     elif(str1!='' and str2==''):
 
           for m in range (x):
                if(_possession[m][1]==username):
@@ -70,13 +70,13 @@ def search_my_game():
                print()
                print("Tidak ada game pada inventory-mu yang memenuhi kriteria.",end="")
 
-     elif(str1==[] and str2!=[]):
+     elif(str1=='' and str2!=''):
 
           for m in range (x):
                if(_possession[m][1]==username):
                  
                  for j in range (k):
-                    if(_possession[m][0]==_gamedata[j][0] and  str2 ==_gamedata[j][4] ):
+                    if(_possession[m][0]==_gamedata[j][0] and  int(str2) ==_gamedata[j][4] ):
                          print()
                          t+=1
                          print(t,end=". ")
