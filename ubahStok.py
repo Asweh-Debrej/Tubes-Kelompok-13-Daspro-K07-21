@@ -1,31 +1,31 @@
 import fungsiDasar as fd
 
 def ubahStok(_gameData):
-    """ mengubah data stok game """
-    id_game = input("Masukkan ID game: ")
-    cek_game = 0
-    for i in range (1, fd.len(_gameData)):
-        if id_game == _gameData[i][0]:
-            cek_game = 1
-            stok = _gameData[i][5]
-            nama = _gameData[i][1]
-            ubah = int(input("Masukkan jumlah: "))
-            totalstok = int(stok) + ubah
-            if totalstok >= 0:
-                if ubah<0:
-                    print("Stok game", nama, "berhasil dikurangi. Stok sekarang:", totalstok)
-                    _gameData[i][5] = totalstok
-                else: #ubah>0
-                    print("Stok game", nama, "berhasil ditambah. Stok sekarang:", totalstok)
-                    _gameData[i][5] = totalstok
-            else: #totalstok<0
-                print("Stok game", nama, "gagal dikurangi karena stok kurang. Stok sekarang:", stok)
+    # mengubah data stok game
+    _idGame = input("Masukkan ID game: ")
+    if _idGame == "":
+        print("Field ID harus diisi!")
+    else:
+        _cekGame = 0
+        for i in range (1, fd.len(_gameData)):
+            if _idGame == _gameData[i][0]:
+                _cekGame = 1
+                _stok = _gameData[i][5]
+                _nama = _gameData[i][1]
+                _ubah = int(input("Masukkan jumlah: "))
+                _totalStok = int(_stok) + _ubah
+                if _totalStok >= 0:
+                    if _ubah<0:
+                        print("Stok game", _nama, "berhasil dikurangi. Stok sekarang:", _totalStok)
+                        _gameData[i][5] = _totalStok
+                    else: # ubah>0
+                        print("Stok game", _nama, "berhasil ditambah. Stok sekarang:", _totalStok)
+                        _gameData[i][5] = _totalStok
+                else: # totalstok<0
+                    print("Stok game", _nama, "gagal dikurangi karena stok kurang. Stok sekarang:", _stok)
 
-            return _gameData
-        
-        else:
-            pass
+                return _gameData
     
-    if cek_game == 0:
-        print("Tidak ada game dengan ID tersebut!")
-        
+        if _cekGame == 0:  # input id game tidak valid
+            print()
+            print("Tidak ada game dengan ID tersebut!")
