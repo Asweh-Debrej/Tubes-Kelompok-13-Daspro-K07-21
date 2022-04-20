@@ -123,7 +123,7 @@ def mintaCommand():
                 elif command == "listgame":
                     lgsd.lihat(_loggedUser[0],_gameData,_possession)            # melihat daftar game yang dimiliki 
                 elif command == "searchmygame":
-                    F10.search_my_game(_possession,_gamedata,_loggedUser)
+                    F10.search_my_game(_possession,_gameData,_loggedUser)
                 elif command == "searchgameatstore":
                     F11.search_game_at_store(_gamedata)
                 elif command == "riwayat":
