@@ -14,7 +14,7 @@ def history(history, loggedUser):
     print(line1)
     print("| {} | {} | {} | {} |".format(lengths[0]*'-', lengths[1]*'-', lengths[2]*'-', lengths[4]*'-'))
     for i in range(1, fd.len(history)):
-        if loggedUser[0] == history[3]:
+        if loggedUser[0] == history[i][3]:
             print("| {0[0]:<{1[0]}} | {0[1]:<{1[1]}} | {0[2]:<{1[2]}} | {0[4]:<{1[4]}} |".format(history[i], lengths))
     print('‾'*fd.len(line1))
 
