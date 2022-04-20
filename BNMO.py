@@ -23,8 +23,8 @@ import tictactoe as tt
 
 _role = "user"
 _loggedIn = False
-_adminCmds = ["register", "login", "tambahgame", "ubahgame", "ubahstok", "listgametoko", "searchgameatstore", "topup", "help", "save", "exit"]
-_userCmds = ["login", "listgametoko", "buygame", "listgame", "searchmygame", "searchgameatstore", "riwayat", "help", "save", "exit"]
+_adminCmds = ["register", "login", "tambahgame", "ubahgame", "ubahstok", "listgametoko", "searchgameatstore", "topup", "help", "save", "exit","kerangajaib","tictactoe"]
+_userCmds = ["login", "listgametoko", "buygame", "listgame", "searchmygame", "searchgameatstore", "riwayat", "help", "save", "exit","kerangajaib","tictactoe"]
 _valCommand = fb.merge(_adminCmds, _userCmds)
 
 
@@ -146,6 +146,8 @@ def mintaCommand():
                     
                 elif command == "kerangajaib":
                     mcs.kerangAjaib()                       # Kerang Ajaib
+                elif command == "tictactoe" :
+                    tt.tictactoe()
             else: # command tidak valid dengan _role
                 pass
 
