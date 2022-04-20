@@ -5,8 +5,7 @@ def ubah_Nama (_indeks, _gameData):
     _variabel = input("Masukkan nama game: ")
     if _variabel != "":
         _gameData[_indeks][1] = _variabel
-    else:
-        pass
+
     return _gameData[_indeks][1]
 
 def ubah_Kategori(_indeks, _gameData):
@@ -14,8 +13,7 @@ def ubah_Kategori(_indeks, _gameData):
     _variabel = input("Masukkan kategori: ")
     if _variabel != "":
         _gameData[_indeks][2] = _variabel
-    else:
-        pass
+
     return _gameData[_indeks][2]
 
 def ubah_TahunRilis(_indeks, _gameData):
@@ -23,8 +21,7 @@ def ubah_TahunRilis(_indeks, _gameData):
     _variabel = input("Masukkan tahun rilis: ")
     if _variabel != "":
         _gameData[_indeks][3] = _variabel
-    else:
-        pass
+
     return _gameData[_indeks][3]
 
 def ubah_Harga(_indeks, _gameData):
@@ -32,14 +29,13 @@ def ubah_Harga(_indeks, _gameData):
     _variabel = input("Masukkan harga: ")
     if _variabel != "":
         _gameData[_indeks][4] = _variabel
-    else:
-        pass
+
     return _gameData[_indeks][4]
 
 def ubahGame(_gameData):
-    """ mengubah spesifikasi data game """
+    # mengubah spesifikasi data game
     _idGame = input("Masukkan ID game: ")
-    if _idGame == "":
+    if _idGame == "": 
         print("Field ID harus diisi!")
     else:
         _cekGame = 0
@@ -47,17 +43,14 @@ def ubahGame(_gameData):
             if _idGame == _gameData[i][0]:
                 _cekGame = 1
 
-                #ubah nilai di csv -> pake F16_save    
+                # mengubah value field spesifikasi data game sesuai input yang diberikan   
                 ubah_Nama(i, _gameData)
                 ubah_Kategori(i, _gameData)
                 ubah_TahunRilis(i, _gameData)
                 ubah_Harga(i, _gameData)  
 
                 return _gameData
-
-            else:
-                pass
-
-        if _cekGame == 0:
+        
+        if _cekGame == 0:  # input id game tidak valid
             print()
             print("Tidak ada game dengan ID tersebut!")

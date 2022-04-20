@@ -1,10 +1,12 @@
 import fungsiDasar as fd
 import bacacsv as baca
 import ubahGame as ug
+import help
+import login
 import exit
 
 def ubahStok(_gameData):
-    """ mengubah data stok game """
+    # mengubah data stok game
     _idGame = input("Masukkan ID game: ")
     if _idGame == "":
         print("Field ID harus diisi!")
@@ -21,30 +23,37 @@ def ubahStok(_gameData):
                     if _ubah<0:
                         print("Stok game", _nama, "berhasil dikurangi. Stok sekarang:", _totalStok)
                         _gameData[i][5] = _totalStok
-                    else: #ubah>0
+                    else: # ubah>0
                         print("Stok game", _nama, "berhasil ditambah. Stok sekarang:", _totalStok)
                         _gameData[i][5] = _totalStok
-                else: #totalstok<0
+                else: # totalstok<0
                     print("Stok game", _nama, "gagal dikurangi karena stok kurang. Stok sekarang:", _stok)
 
                 return _gameData
-            
-            else:
-                pass
     
-        if _cekGame == 0:
+        if _cekGame == 0:  # input id game tidak valid
             print()
             print("Tidak ada game dengan ID tersebut!")
         
-matriks1 = baca.matriks("game.csv")
+"""matriks1 = baca.matriks("game.csv")
 matriks2 = baca.matriks("user.csv")
 matriks3 = baca.matriks("kepemilikan.csv")
 matriks4 = baca.matriks("riwayat.csv")
+_role = "user"
+help.help(_role)
+_loggedUser = login.login(matriks2)
+_role = _loggedUser[4]
+help.help(_role)
 ubahStok(matriks1)
 ug.ubahGame(matriks1)
-exit.exit(matriks2, matriks1, matriks4, matriks3)
+exit.exit(matriks2, matriks1, matriks4, matriks3)"""
 
 """id;nama;kategori;tahun_rilis;harga;stok;
 G001;Call of Duty;FPS;2000;1000;2;
 G002;Elder Ring;Adventure;2020;2000;3;
 G003;AC Unity;Adventure;2030;3000;4;"""
+
+"""id;username;nama;password;role;saldo;
+U001;jonathan;Jonathan Sinaga;jon123;user;100000;
+U002;zzz;asdasd;asd123;admin;0;
+"""

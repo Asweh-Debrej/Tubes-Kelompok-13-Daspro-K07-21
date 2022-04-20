@@ -1,11 +1,13 @@
 import fungsiDasar as fd
+import bacacsv as baca
 import cipher as cp
 
 def login(_usersData):
-    """ validasi input username dan password ketika login """
+    # menerima dan memvalidasi input username dan input password agar dapat mengakses binomo
     _inUsername = input("Masukkan username: ")
     _inPassword = cp.cipher(input("Masukkan password: "))
     _cekValid = 0
+    # menginisiasi list _loggedUser
     _loggedUser = ["0","1","2","3","4","5"]
     for i in range(1, fd.len(_usersData)):
         if _inUsername == _usersData[i][1]:
@@ -24,10 +26,12 @@ def login(_usersData):
             
                 return _loggedUser
 
-            else:
-                pass
-        else:
-            pass
-
-    if _cekValid == 0:
+    if _cekValid == 0: # input username atau password tidak valid
         print("Password atau username salah atau tidak ditemukan.")
+
+"""matriks = baca.matriks("user.csv")
+print(login(matriks))"""
+
+"""id;username;nama;password;role;saldo;
+U001;jonathan;Jonathan Sinaga;jon123;user;100000;
+U002;zzz;asdasd;asd123;admin;0;"""
