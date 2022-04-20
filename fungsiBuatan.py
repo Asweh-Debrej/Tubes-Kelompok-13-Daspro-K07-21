@@ -1,6 +1,8 @@
 import fungsiDasar as fd
 
 def maxLengths(matrix):
+    """Mengembalikan panjang elemen terpanjang dari setiap kolom pada tabel dua dimensi
+    """
     if not matrix:
         return 0
 
@@ -17,6 +19,7 @@ def maxLengths(matrix):
 
 
 def merge(arr1, arr2):
+    """Menggabungkan kedua array """
     for val in arr2:
         if fd.find(arr1, val) == -1:
             arr1 = fd.append(arr1, val)
@@ -25,5 +28,4 @@ def merge(arr1, arr2):
 
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    import tes
-    print(maxLengths(tes.gameData))
+    pass
