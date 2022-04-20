@@ -33,6 +33,7 @@ def ubahStok(_gameData):
                 pass
     
         if _cekGame == 0:
+            print()
             print("Tidak ada game dengan ID tersebut!")
         
 matriks1 = baca.matriks("game.csv")

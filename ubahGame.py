@@ -59,5 +59,5 @@ def ubahGame(_gameData):
                 pass
 
         if _cekGame == 0:
-            print("")
+            print()
             print("Tidak ada game dengan ID tersebut!")
