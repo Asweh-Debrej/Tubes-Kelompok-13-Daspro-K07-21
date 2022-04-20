@@ -127,7 +127,7 @@ def mintaCommand():
                 elif command == "searchgameatstore":
                     F11.search_game_at_store(_gameData)
                 elif command == "riwayat":
-                    history.history(_gameData, _loggedUser)
+                    history.history(_history, _loggedUser)
                 elif command == "topup":
                     _usersData = topup.topup(_usersData)
                 elif command == "help":
