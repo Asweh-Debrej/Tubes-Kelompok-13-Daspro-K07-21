@@ -10,7 +10,6 @@ def search_game_at_store(_gamedata):
     str5= input("Masukkan Tahun Rilis Game: ")
 
 
-    
     print("Daftar game pada toko yang memenuhi kriteria: ")
      
     t=0
@@ -164,4 +163,6 @@ def search_game_at_store(_gamedata):
                     
          if(t==0):
              print()
+
              print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+
