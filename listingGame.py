@@ -1,11 +1,11 @@
 import fungsiDasar as fd
-
+import fungsiBuatan as fb
 
 def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
     _banyakData = fd.len(_arrData)
 
-    for x in range(_banyakData-1):
+    for x in range(1,banyakData):
         _indeksMaks = x
 
         for y in range(x+1,_banyakData):
@@ -44,17 +44,15 @@ def selection_sort(_skemaSorting,_arrData):
         _arrData[x][3]  = _temp3
         _arrData[x][4]  = _temp4
 
-    # cari string terpanjang
-    _terpanjang = 0
-    for x in range(_banyakData):
-        for y in range(6):
-            if(len(str(_arrData[x][y])) > _terpanjang):
-                _terpanjang = len(str(_arrData[x][y]))
-
-    s = '{: ^' + str(_terpanjang) +'}'
-
-    for x in range(_banyakData):
-        print(str(x + 1) + '. ' + s.format(_arrData[x][0]) + " | " + s.format(_arrData[x][1]) + " | " + s.format(_arrData[x][4]) + "\t | " + s.format(_arrData[x][2]) + "\t | " + s.format(_arrData[x][3]) + "\t | " + s.format(_arrData[x][5]))
+      #print matriks
+    _lengths = fb.maxLengths(_arrData)
+    line1 = "| {0[0]:^{1[0]}} | {0[1]:^{1[1]}} | {0[4]:^{1[4]}} | {0[2]:^{1[2]}} | {0[3]:^{1[3]}} | {0[5]:^{1[5]}} |".format(_arrData[0],_lengths)
+    print('_'*fd.len(line1))
+    print(line1)
+    print("| {} | {} | {} | {} | {} | {}".format(_lengths[0]*'-',_lengths[1]*'-',_lengths[4]*'-',_lengths[2]*'-',_lengths[3]*'-',_lengths[5]*'-'))
+    for i in range(1, fd.len(_arrData)):
+        print("| {0[0]:<{1[0]}} | {0[1]:<{1[1]}} | {0[4]:<{1[4]}} | {0[2]:<{1[2]}} | {0[3]:<{1[3]}} | {0[5]:<{1[5]}} |".format(_arrData[i], _lengths))
+    print('‾'*fd.len(line1))
 
 
 def listing_game(game):
@@ -72,7 +70,10 @@ def listing_game(game):
 
     _skemaSorting = input("Skema sorting : ")
 
+
     if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
         selection_sort(_skemaSorting,_arrData)
+
     else:
         print("Skema sorting tidak valid")
+

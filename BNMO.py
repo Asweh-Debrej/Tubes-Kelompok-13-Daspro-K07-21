@@ -23,8 +23,8 @@ import tictactoe as tt
 
 _role = "user"
 _loggedIn = False
-_adminCmds = ["register", "login", "tambahgame", "ubahgame", "ubahstok", "listgametoko", "searchgameatstore", "topup", "help", "save", "exit"]
-_userCmds = ["login", "listgametoko", "buygame", "listgame", "searchmygame", "searchgameatstore", "riwayat", "help", "save", "exit"]
+_adminCmds = ["register", "login", "tambahgame", "ubahgame", "ubahstok", "listgametoko", "searchgameatstore", "topup", "help", "save", "exit","kerangajaib","tictactoe"]
+_userCmds = ["login", "listgametoko", "buygame", "listgame", "searchmygame", "searchgameatstore", "riwayat", "help", "save", "exit","kerangajaib","tictactoe"]
 _valCommand = fb.merge(_adminCmds, _userCmds)
 
 
@@ -94,8 +94,7 @@ def roleCmdIsValid(role, command, adminCmds, userCmds):
     return cek_command
 
 
-def mintaCommand():
-    global _role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser
+def mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser):
     command = fd.replace(fd.replace(fd.replace(input(">>> ").lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
     if fd.find(_valCommand, command) != -1:                 # validasi input command
         if _loggedIn:
@@ -123,17 +122,17 @@ def mintaCommand():
                 elif command == "listgame":
                     lgsd.lihat(_loggedUser[0],_gameData,_possession)            # melihat daftar game yang dimiliki 
                 elif command == "searchmygame":
-                    F10.search_my_game(_possession,_gamedata,_loggedUser)
-                elif coand == "searchgameatstore":
-                    F11.search_game_at_store(_gamedata)
+                    F10.search_my_game(_possession,_gameData,_loggedUser)
+                elif command == "searchgameatstore":
+                    F11.search_game_at_store(_gameData)
                 elif command == "riwayat":
-                    history.history(_gameData, _loggedUser)
+                    history.history(_history, _loggedUser)
                 elif command == "topup":
                     _usersData = topup.topup(_usersData)
                 elif command == "help":
                     help.help(_role)
                 elif command == "exit":
-                    running = exit.exit(_usersData, _gameData, _history, _possession)
+                    running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)
                 elif command == "save":
                     cari = input("Masukkan nama folder penyimpanan : ")         # Melakukan save
                     print("")
@@ -146,6 +145,8 @@ def mintaCommand():
                     
                 elif command == "kerangajaib":
                     mcs.kerangAjaib()                       # Kerang Ajaib
+                elif command == "tictactoe" :
+                    tt.tictactoe()
             else: # command tidak valid dengan _role
                 pass
 
@@ -156,7 +157,9 @@ def mintaCommand():
                     _role = _loggedUser[4]
                     _loggedIn = True
             elif command == "help":
-                help.help(_role)                         
+                help.help(_role)  
+            elif command == "exit":
+                running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)                       
             else:
                 # validasi perintah, tidak boleh melakukan apa-apa sebelum login KECUALI HELP
                 print('Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
@@ -172,8 +175,8 @@ running = True
 
 
 if __name__ == "__main__":   # Inti program
-    loading.load()
+    _usersData, _gameData, _history, _possession = loading.load()
     while running:
-        mintaCommand()
+        mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser)
 
     print("Selamat menikmati hari anda :(")
