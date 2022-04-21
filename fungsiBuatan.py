@@ -25,5 +25,4 @@ def merge(arr1, arr2):
 
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    import tes
-    print(maxLengths(tes.gameData))
+    pass
