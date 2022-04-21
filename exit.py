@@ -1,7 +1,10 @@
 import fungsiDasar as fd
 import save as sv
 
-def exit(_usersData, _gameData, _history, _possession):
+def exit(_usersData, _gameData, _history, _possession, loggedIn):
+    if not loggedIn:
+        return 0
+        
     confirm = input("Apakah anda benar benar ingin keluar? (Y/n) ")
     while fd.find(['y', 'n', 'yes', 'no', 'ya', 'tidak'], confirm.lower()) == -1:
         print("Masukan tidak sesuai!")
