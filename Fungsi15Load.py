@@ -10,12 +10,13 @@ def load():
     
 
     if len(sys.argv) == 2:
-        if os.path.exists(sys.argv[1]):
+        if os.path.isdir(sys.argv[1]):
              with open(sys.argv[1]) as folder:
                  print("Selamat datang di antarmuka 'Binomo' ")
-            
+        elif(os.path.isfile(sys.argv[1])):
+            print("Ini adalah fila bukan folder sehingga masukan salah harus folder")
         else:
             print('Folder',args.folder,'tidak ditemukan.')
-    elif len(sys.argv) == 0:
+    elif len(sys.argv) == 1:
         print('Tidak ada nama folder yang diberikan')
     

@@ -164,4 +164,6 @@ def search_game_at_store(_gamedata):
                     
          if(t==0):
              print()
+
              print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+
