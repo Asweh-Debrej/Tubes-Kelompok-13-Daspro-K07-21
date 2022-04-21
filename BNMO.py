@@ -94,8 +94,7 @@ def roleCmdIsValid(role, command, adminCmds, userCmds):
     return cek_command
 
 
-def mintaCommand():
-    global _role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser
+def mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser):
     command = fd.replace(fd.replace(fd.replace(input(">>> ").lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
     if fd.find(_valCommand, command) != -1:                 # validasi input command
         if _loggedIn:
@@ -133,7 +132,7 @@ def mintaCommand():
                 elif command == "help":
                     help.help(_role)
                 elif command == "exit":
-                    running = exit.exit(_usersData, _gameData, _history, _possession)
+                    running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)
                 elif command == "save":
                     cari = input("Masukkan nama folder penyimpanan : ")         # Melakukan save
                     print("")
@@ -156,7 +155,9 @@ def mintaCommand():
                     _role = _loggedUser[4]
                     _loggedIn = True
             elif command == "help":
-                help.help(_role)                         
+                help.help(_role)  
+            elif command == "exit":
+                running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)                       
             else:
                 # validasi perintah, tidak boleh melakukan apa-apa sebelum login KECUALI HELP
                 print('Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
@@ -172,8 +173,8 @@ running = True
 
 
 if __name__ == "__main__":   # Inti program
-    loading.load()
+    _usersData, _gameData, _history, _possession = loading.load()
     while running:
-        mintaCommand()
+        mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser)
 
     print("Selamat menikmati hari anda :(")
