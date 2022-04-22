@@ -9,42 +9,42 @@ def check():
             print()
 
         print("X menang secara horizontal")
-        exit()
+
      elif(toe[0][0]=='X'and toe[1][0]=='X'and toe[2][0]=="X" or toe[0][1]=='X'and toe[1][1]=='X'and toe[2][1]=="X" or toe[0][2]=='X'and toe[1][2]=='X'and toe[2][2]=="X"):
          for i in range(3):
             for j in range(3):
                 print (toe[i][j],end="")
             print()
          print("X menang secara Vertikal")
-         exit()
+
      elif(toe[0][0]=='X'and toe[1][1]=='X'and toe[2][2]=="X" or toe[0][2]=='X'and toe[1][1]=='X'and toe[2][0]=="X" ):
          for i in range(3):
             for j in range(3):
                 print (toe[i][j],end="")
             print()
          print("X menang secara horizontal")
-         exit()
+
      if(toe[0][0]=='O'and toe[0][1]=='O'and toe[0][2]=='O' or toe[1][0]=='O'and toe[1][1]=='O'and toe[1][2]=="O" or toe[2][0]=='O'and toe[2][1]=='O'and toe[2][2]=="O"):
          for i in range(3):
             for j in range(3):
                 print (toe[i][j],end="")
             print()
          print("O menang secara horizontal")
-         exit()
+
      elif(toe[0][0]=='O'and toe[1][0]=='O'and toe[2][0]=="O" or toe[0][1]=='O'and toe[1][1]=='O'and toe[2][1]=="O" or toe[0][2]=='O'and toe[1][2]=='O'and toe[2][2]=="O"):
         for i in range(3):
             for j in range(3):
                 print (toe[i][j],end="")
             print()
         print("O menang secara Vertikal")
-        exit()
+
      elif(toe[0][0]=='O'and toe[1][1]=='O'and toe[2][2]=="O" or toe[0][2]=='O'and toe[1][1]=='O'and toe[2][0]=="O" ):
          for i in range(3):
             for j in range(3):
                 print (toe[i][j],end="")
             print()
          print("O menang secara horizontal")
-         exit()
+
 
 def tictactoe():
   
@@ -115,7 +115,7 @@ def tictactoe():
             print()
         print("Seri. Tidak ada yang menang")
         print("Terima Kasih Sudah memainkan game ini, Ulangi jika ingin memainkannya lagi")
-        exit()
+
 
 
 
