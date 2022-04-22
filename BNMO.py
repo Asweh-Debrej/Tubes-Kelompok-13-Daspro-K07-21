@@ -94,8 +94,11 @@ def roleCmdIsValid(role, command, adminCmds, userCmds):
     return cek_command
 
 
-def mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser):
+def mintaCommand():
+    global _role, _loggedIn, _adminCmds, _userCmds, _valCommand, _loggedUser, _usersData, _gameData, _history, _possession, running
+    print('-'*100)
     command = fd.replace(fd.replace(fd.replace(input(">>> ").lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
+    print()
     if fd.find(_valCommand, command) != -1:                 # validasi input command
         if _loggedIn:
             if roleCmdIsValid(_role, command, _adminCmds, _userCmds):              # validasi perintah admin dan user
@@ -175,8 +178,11 @@ running = True
 
 
 if __name__ == "__main__":   # Inti program
-    _usersData, _gameData, _history, _possession = loading.load()
-    while running:
-        mintaCommand(_role, _loggedIn, _usersData, _gameData, _history, _possession, running, _loggedUser)
+    data = loading.load()
+    if data:    # apabila data tidak kosong atau dapat diproses
+        _usersData, _gameData, _history, _possession = data
+        fb.printWelcome()
+        while running:
+            mintaCommand()
 
-    print("Selamat menikmati hari anda :(")
+        print("Selamat menikmati hari anda :(")
