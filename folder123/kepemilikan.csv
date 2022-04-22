@@ -1,4 +1,5 @@
-game_id;user_id
-G001;U001
-G002;U002
-G003;U003
+game_id;user_id;
+G001;U001;
+G002;U002;
+G003;U003;
+G005;U004;

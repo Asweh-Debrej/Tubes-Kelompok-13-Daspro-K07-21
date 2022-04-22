@@ -1,5 +1,6 @@
-game_id;nama;harga;user_id;tahun_beli
-G001;FIFA2021;25000;U001;2021
-G002;HTTP;10000;U002;2020
-G003;The Sims 4;25000;U003;2021
-G004;Candy Crush;15000;U004;2020
+game_id;nama;harga;user_id;tahun_beli;
+G001;FIFA2021;25000;U001;2021;
+G002;HTTP;10000;U002;2020;
+G003;The Sims 4;25000;U003;2021;
+G004;Candy Crush;15000;U004;2020;
+G005;Angry Birds;0;U004;2022;
