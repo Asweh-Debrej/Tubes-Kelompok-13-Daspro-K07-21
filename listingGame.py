@@ -1,5 +1,5 @@
 import fungsiDasar as fd
-import fungsiBuatan as fb
+import fungsiBuatan as fb 
 
 def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
