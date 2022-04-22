@@ -58,5 +58,34 @@ def printWelcome():
            '----------------'  '----------------'  '----------------'  '----------------' """)
 
 
+def blit(loggedUser):
+    maxLen = 0
+    title = [
+        "██████╗  ███╗   ██╗ ███╗   ███╗  ██████╗ ",
+        "██╔══██╗ ████╗  ██║ ████╗ ████║ ██╔═══██╗",
+        "██████╔╝ ██╔██╗ ██║ ██╔████╔██║ ██║   ██║",
+        "██╔══██╗ ██║╚██╗██║ ██║╚██╔╝██║ ██║   ██║",
+        "██████╔╝ ██║ ╚████║ ██║ ╚═╝ ██║ ╚██████╔╝",
+        "╚═════╝  ╚═╝  ╚═══╝ ╚═╝     ╚═╝  ╚═════╝ "                              
+    ]
+    for line in title + [loggedUser[0] + loggedUser[1] + ' '*5, loggedUser[2] + ' '*5, "saldo" + ' '*5, "Logged as admin      " + str(loggedUser[5])]:
+        if fd.len(line) > maxLen:
+            maxLen = fd.len(line)
+
+    maxLen += 8
+    print("|{}|".format((maxLen+2)*'‾'))
+    for line in title:
+        print("| {0:^{1}} |".format(line, maxLen))
+    print("|{}|".format((maxLen+2)*'-'))
+    print("| {0:<{1}}".format(loggedUser[0], 5) + "{0:>{1}} |".format(loggedUser[1], maxLen - 5))
+    print("| {0:<{1}} |".format(loggedUser[2], maxLen))
+    print("| {0:>{1}} |".format("saldo", maxLen))
+    print("| {0:<{1}}".format("Logged as {}".format(loggedUser[4]), 15)  + "{0:>{1}} |".format(str(loggedUser[5]), maxLen - 15))
+    for i in range(4):
+        print("| {0:^{1}} |".format('', maxLen))
+    print("|{}|".format((maxLen+2)*'_'))
+                  
+
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    pass
+    _loggedUser = ["1", "2", "3", "4", "5", 0]
+    blit(_loggedUser)

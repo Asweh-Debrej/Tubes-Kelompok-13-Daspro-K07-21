@@ -19,12 +19,13 @@ import Fungsi15Load as loading
 import cipher as cp
 import magicConchShell as mcs
 import tictactoe as tt
+import os # design (pake cls)
 
 
 _role = "user"
 _loggedIn = False
-_adminCmds = ["register", "login", "tambahgame", "ubahgame", "ubahstok", "listgametoko", "searchgameatstore", "topup", "help", "save", "exit","kerangajaib","tictactoe"]
-_userCmds = ["login", "listgametoko", "buygame", "listgame", "searchmygame", "searchgameatstore", "riwayat", "help", "save", "exit","kerangajaib","tictactoe"]
+_adminCmds = ["register", "login", "addgame", "updategame", "updatestock", "store", "storesearch", "topup", "help", "save", "exit","magicconch","tictactoe"]
+_userCmds = ["login", "store", "buygame", "listgame", "searchmygame", "storesearch", "history", "help", "save", "exit","magicconch","tictactoe"]
 _valCommand = fb.merge(_adminCmds, _userCmds)
 
 
@@ -96,6 +97,9 @@ def roleCmdIsValid(role, command, adminCmds, userCmds):
 
 def mintaCommand():
     global _role, _loggedIn, _adminCmds, _userCmds, _valCommand, _loggedUser, _usersData, _gameData, _history, _possession, running
+    if _loggedIn:
+        os.system("cls") # design
+        fb.blit(_loggedUser)
     print('-'*100)
     command = fd.replace(fd.replace(fd.replace(input(">>> ").lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
     print()
@@ -106,15 +110,16 @@ def mintaCommand():
                     _usersData = reg.register(_usersData)
                 elif command == "login":
                     print('Anda sudah login! Untuk melihat list command, ketik "help".')
-                elif command == "tambahgame":
+                elif command == "addgame":
                     _gameData = ag.addGame(_gameData)
-                elif command == "ubahgame":
+                elif command == "updategame":
                     ug.ubahGame(_gameData)
-                elif command == "ubahstok":
+                elif command == "updatestock":
                     us.ubahStok(_gameData)
-                elif command == "listgametoko":           # Melihat daftar game yang ada     
+                elif command == "store":           # Melihat daftar game yang ada     
                     lg.listing_game(_gameData)
                 elif command == "buygame":
+                    lg.listing_game(_gameData)
                     _wanted = input("Masukkan ID Game: ")   # Membeli game
                     if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
                         _history     = bg._ubahHistory(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
@@ -126,9 +131,9 @@ def mintaCommand():
                     lgsd.lihat(_loggedUser[0],_gameData,_possession)            # melihat daftar game yang dimiliki 
                 elif command == "searchmygame":
                     F10.search_my_game(_possession,_gameData,_loggedUser)
-                elif command == "searchgameatstore":
+                elif command == "storesearch":
                     F11.search_game_at_store(_gameData)
-                elif command == "riwayat":
+                elif command == "history":
                     history.history(_history, _loggedUser)
                 elif command == "topup":
                     _usersData = topup.topup(_usersData)
@@ -146,7 +151,7 @@ def mintaCommand():
                     sv.simpan(_history,"riwayat",cari)
                     print("Data telah disimpan pada folder " + cari +"!")
                     
-                elif command == "kerangajaib":
+                elif command == "magicconch":
                     mcs.kerangAjaib()                       # Kerang Ajaib
                 elif command == "tictactoe" :
                     tt.tictactoe()

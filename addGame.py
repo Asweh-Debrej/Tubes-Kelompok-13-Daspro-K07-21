@@ -1,5 +1,7 @@
 import fungsiDasar as fd
 
+cancelMsg = ["batal", ]
+
 def askGName(gameData):
     """Meminta nama game.
     
@@ -105,6 +107,8 @@ def addGame(gameData):
     stock = askStock()
 
     gameData = fd.append(gameData, [id, gName, category, releaseYear, price, stock])
+    print("Game {} berhasil ditambahkan dengan id: {}".format())
+
     return gameData
 
 
