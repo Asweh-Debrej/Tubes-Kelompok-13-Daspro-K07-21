@@ -15,7 +15,6 @@ def askName():
     """Menanyakan nama pengguna
     
     Mengembalikan nama yang sudah valid"""
-    print("-"*100)
     name = fd.strip(input("Masukkan nama : "))
     if not name:
         print("Nama tidak boleh kosong!")
@@ -27,7 +26,6 @@ def askUName(usedUName):
     """Menanyakan username kepada pengguna.
     
     Mengembalikan username yang sudah valid."""
-    print("-"*100)
     uName = input("Masukkan username : ")
     valid = True
     for i in uName:
@@ -52,7 +50,6 @@ def askPass(name: str, uName: str):
     """Menanyakan password kepada pengguna.
     
     Mengembalikan password yang sudah valid."""
-    print("-"*100)
     password = cp.cipher(input("Masukkan password : "))             # Disandikan langsung untuk mencegah kebocoran password ketika terjadi kebocoran memori
     if len(password) < 6:
         print("Panjang password tidak boleh kurang dari 6 karakter!")
