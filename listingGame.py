@@ -76,7 +76,7 @@ def listing_game(game):
     print('')
     _skemaSorting = input("Skema sorting : ")
     
-    if(fd.len(_skemaSorting) >=6):
+    if(fd.len(_skemaSorting) == 6):
         for x in range(6):
             _skemaSorting[x] = _skemaSorting[x].lower()
             
