@@ -9,7 +9,7 @@ def _ubahJadiString(arr):
 
     for x in range(_panjang):
         for y in range(_lebar):
-            _data += str(arr[x][y]) +","
+            _data += str(arr[x][y]) +";"
         _data += "\n"
 
     return _data
