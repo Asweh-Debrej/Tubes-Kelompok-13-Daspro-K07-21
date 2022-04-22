@@ -49,7 +49,7 @@ def selection_sort(_skemaSorting,_arrData):
     line1 = "| {0[0]:^{1[0]}} | {0[1]:^{1[1]}} | {0[4]:^{1[4]}} | {0[2]:^{1[2]}} | {0[3]:^{1[3]}} | {0[5]:^{1[5]}} |".format(_arrData[0],_lengths)
     print('_'*fd.len(line1))
     print(line1)
-    print("| {} | {} | {} | {} | {} | {}".format(_lengths[0]*'-',_lengths[1]*'-',_lengths[4]*'-',_lengths[2]*'-',_lengths[3]*'-',_lengths[5]*'-'))
+    print("| {} | {} | {} | {} | {} | {} |".format(_lengths[0]*'-',_lengths[1]*'-',_lengths[4]*'-',_lengths[2]*'-',_lengths[3]*'-',_lengths[5]*'-'))
     for i in range(1, fd.len(_arrData)):
         print("| {0[0]:<{1[0]}} | {0[1]:<{1[1]}} | {0[4]:<{1[4]}} | {0[2]:<{1[2]}} | {0[3]:<{1[3]}} | {0[5]:<{1[5]}} |".format(_arrData[i], _lengths))
     print('‾'*fd.len(line1))
