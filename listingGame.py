@@ -5,7 +5,7 @@ def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
     _banyakData = fd.len(_arrData)
 
-    for x in range(1,banyakData):
+    for x in range(1, _banyakData):
         _indeksMaks = x
 
         for y in range(x+1,_banyakData):
