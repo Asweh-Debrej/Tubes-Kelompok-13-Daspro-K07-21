@@ -68,11 +68,22 @@ def listing_game(game):
         _arrData[x][4]  = game[x][4]
         _arrData[x][5]  = game[x][5]
 
+    print("Daftar skema sorting : ")
+    print("     - harga+    : mensortir berdasarkan harga termurah -> termahal ")
+    print("     - harga-    : mensortir berdasarkan harga termahal -> termurah ")
+    print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
+    print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
+    print('')
     _skemaSorting = input("Skema sorting : ")
-
-
-    if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
-        selection_sort(_skemaSorting,_arrData)
+    
+    if(fd.len(_skemaSorting) >=6):
+        for x in range(6):
+            _skemaSorting[x] = _skemaSorting[x].lower()
+            
+        if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
+            selection_sort(_skemaSorting,_arrData)
+        else:
+            print("Skema sorting tidak valid")
 
     else:
         print("Skema sorting tidak valid")
