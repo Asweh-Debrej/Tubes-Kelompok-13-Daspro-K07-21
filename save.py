@@ -49,7 +49,7 @@ def simpan(_arrData, tipe,cari):
     #_hasil = _ubahJadiString(_gabung) + _ubahJadiString(_arrData)
     # Asumsikan di dalam matriksnya, sudah terdefinisi header
     _hasil = _ubahJadiString(_arrData)
-    a = open(buka,"w")
+    a = open(buka,"w", encoding='utf-8')        # encoding= utf-8 agar dapat menggunakan tabel ASCII yang lebih luas hingga 1114112 karakter
     a.writelines(_hasil)
 
 
