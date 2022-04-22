@@ -1,36 +1,11 @@
 import fungsiDasar as fd
 
-def ubah_Nama (_indeks, _gameData):
-    """ mengubah value field nama jika input tidak kosong """
-    _variabel = input("Masukkan nama game: ")
+def ubah_value(_indeks, _gameData, _variabel, j):
+    """ mengubah value field j jika input tidak kosong """
     if _variabel != "":
-        _gameData[_indeks][1] = _variabel
-
-    return _gameData[_indeks][1]
-
-def ubah_Kategori(_indeks, _gameData):
-    """ mengubah value field kategori jika input tidak kosong """
-    _variabel = input("Masukkan kategori: ")
-    if _variabel != "":
-        _gameData[_indeks][2] = _variabel
-
-    return _gameData[_indeks][2]
-
-def ubah_TahunRilis(_indeks, _gameData):
-    """ mengubah value field tahun rilis jika input tidak kosong """
-    _variabel = input("Masukkan tahun rilis: ")
-    if _variabel != "":
-        _gameData[_indeks][3] = _variabel
-
-    return _gameData[_indeks][3]
-
-def ubah_Harga(_indeks, _gameData):
-    """ mengubah value field harga jika input tidak kosong """
-    _variabel = input("Masukkan harga: ")
-    if _variabel != "":
-        _gameData[_indeks][4] = _variabel
-
-    return _gameData[_indeks][4]
+        _gameData[_indeks][j] = _variabel
+    
+    return _gameData[_indeks][j]
 
 def ubahGame(_gameData):
     # mengubah spesifikasi data game
@@ -43,11 +18,16 @@ def ubahGame(_gameData):
             if _idGame == _gameData[i][0]:
                 _cekGame = 1
 
+                _namaBaru = input("Masukkan nama game: ")
+                _kategoriBaru = input("Masukkan kategori: ")
+                _tahunRilisBaru = input("Masukkan tahun rilis: ")
+                _hargaBaru = input("Masukkan harga: ")
+
                 # mengubah value field spesifikasi data game sesuai input yang diberikan   
-                ubah_Nama(i, _gameData)
-                ubah_Kategori(i, _gameData)
-                ubah_TahunRilis(i, _gameData)
-                ubah_Harga(i, _gameData)  
+                ubah_value(i, _gameData, _namaBaru, 1)
+                ubah_value(i, _gameData, _kategoriBaru, 2)
+                ubah_value(i, _gameData, _tahunRilisBaru, 3)
+                ubah_value(i, _gameData, _hargaBaru, 4)
 
                 return _gameData
         

@@ -1,7 +1,7 @@
 import fungsiDasar as fd
 
 def maxLengths(matrix):
-    """Mengembalikan panjang terpanjang setiap kolom dari matriks berukuran minimal 5x1.
+    """Mengembalikan panjang terpanjang setiap kolom dari matriks berukuran minimal 1x1.
     """
     if not matrix:
         return 0

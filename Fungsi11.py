@@ -32,7 +32,7 @@ def search_game_at_store(_gamedata):
     elif(str2!=''):
                     
          for j in range (k):
-             if(str2 ==_gamedata[j][1]):
+             if(str2.lower() ==_gamedata[j][1].lower()):
                  print()
                  t+=1
                  print(t,end=". ")

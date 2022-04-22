@@ -107,6 +107,7 @@ def beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
      _gameIndex = gameIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
      _userIndex = userIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
      _bisa = False
+     _wanted[0] = _wanted[0].upper()
 
      # Cek apakah input Valid
      if(cekGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
