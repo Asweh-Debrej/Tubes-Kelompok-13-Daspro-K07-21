@@ -1,5 +1,5 @@
 import fungsiDasar as fd
-import fungsiBuatan as fb
+import fungsiBuatan as fb 
 
 def selection_sort(_skemaSorting,_arrData):
     # Melakukan selection sort dan mengprint hasilnya
@@ -49,7 +49,7 @@ def selection_sort(_skemaSorting,_arrData):
     line1 = "| {0[0]:^{1[0]}} | {0[1]:^{1[1]}} | {0[4]:^{1[4]}} | {0[2]:^{1[2]}} | {0[3]:^{1[3]}} | {0[5]:^{1[5]}} |".format(_arrData[0],_lengths)
     print('_'*fd.len(line1))
     print(line1)
-    print("| {} | {} | {} | {} | {} | {}".format(_lengths[0]*'-',_lengths[1]*'-',_lengths[4]*'-',_lengths[2]*'-',_lengths[3]*'-',_lengths[5]*'-'))
+    print("| {} | {} | {} | {} | {} | {} |".format(_lengths[0]*'-',_lengths[1]*'-',_lengths[4]*'-',_lengths[2]*'-',_lengths[3]*'-',_lengths[5]*'-'))
     for i in range(1, fd.len(_arrData)):
         print("| {0[0]:<{1[0]}} | {0[1]:<{1[1]}} | {0[4]:<{1[4]}} | {0[2]:<{1[2]}} | {0[3]:<{1[3]}} | {0[5]:<{1[5]}} |".format(_arrData[i], _lengths))
     print('‾'*fd.len(line1))
@@ -68,11 +68,22 @@ def listing_game(game):
         _arrData[x][4]  = game[x][4]
         _arrData[x][5]  = game[x][5]
 
+    print("Daftar skema sorting : ")
+    print("     - harga+    : mensortir berdasarkan harga termurah -> termahal ")
+    print("     - harga-    : mensortir berdasarkan harga termahal -> termurah ")
+    print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
+    print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
+    print('')
     _skemaSorting = input("Skema sorting : ")
-
-
-    if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
-        selection_sort(_skemaSorting,_arrData)
+    
+    if(fd.len(_skemaSorting) == 6):
+        for x in range(6):
+            _skemaSorting[x] = _skemaSorting[x].lower()
+            
+        if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
+            selection_sort(_skemaSorting,_arrData)
+        else:
+            print("Skema sorting tidak valid")
 
     else:
         print("Skema sorting tidak valid")
