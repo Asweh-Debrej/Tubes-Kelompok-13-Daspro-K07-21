@@ -4,9 +4,8 @@ def askID(usersData):
     """Meminta ID pengguna.
 
     Mengembalikan ID yang sudah valid."""
-    print("-"*100)
     Type = "id"
-    Input = fd.strip(input("""Masukkan "uname" untuk menggunakan user pengguna
+    Input = fd.strip(input("""Masukkan id pengguna. Ketik "uname" untuk menggunakan username pengguna
     
         ID : """))
     if not Input:
@@ -25,9 +24,8 @@ def askUName(usersData):
     """Meminta username pengguna.
     
     Mengembalikan username yang sudah valid."""
-    print("-"*100)
     Type = "uname"
-    Input = fd.strip(input("""Masukkan "id" untuk menggunakan ID pengguna
+    Input = fd.strip(input("""Masukkan username pengguna. Ketik "id" untuk menggunakan ID pengguna
 
         Username : """))
     if not Input:
@@ -46,7 +44,6 @@ def askAmount(usersData, person, Type):
     """Meminta jumlah penambahan saldo.
     
     Mengembalikan nilai yang sudah valid"""
-    print("-"*100)
     amount = fd.strip(input("Jumlah penambahan saldo : "))
     if amount == "batal":
         return
