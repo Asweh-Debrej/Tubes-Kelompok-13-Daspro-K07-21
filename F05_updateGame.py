@@ -1,5 +1,4 @@
 import C01_fungsiDasar as fd
-import F04_addGame as ag
 
 def ubah_value(_indeks, _gameData, _variabel, j):
     """ mengubah value field j jika input tidak kosong """
@@ -19,10 +18,10 @@ def ubahGame(_gameData):
             if _idGame == _gameData[i][0]:
                 _cekGame = 1
 
-                _namaBaru = ag.askGName(_gameData)
-                _kategoriBaru = ag.askCategory()
-                _tahunRilisBaru = ag.askRelease()
-                _hargaBaru = ag.askPrice()
+                _namaBaru = input("Masukkan nama game: ")
+                _kategoriBaru = input("Masukkan kategori: ")
+                _tahunRilisBaru = input("Masukkan tahun rilis: ")
+                _hargaBaru = input("Masukkan harga: ")
 
                 # mengubah value field spesifikasi data game sesuai input yang diberikan   
                 ubah_value(i, _gameData, _namaBaru, 1)
@@ -35,4 +34,5 @@ def ubahGame(_gameData):
         if _cekGame == 0:  # input id game tidak valid
             print()
             print("Tidak ada game dengan ID tersebut!")
+
 
