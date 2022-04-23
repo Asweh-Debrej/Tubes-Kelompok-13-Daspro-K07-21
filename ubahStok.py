@@ -13,19 +13,22 @@ def ubahStok(_gameData):
                 _stok = _gameData[i][5]
                 _nama = _gameData[i][1]
                 _ubah = int(input("Masukkan jumlah: "))
-                _totalStok = int(_stok) + _ubah
-                if _totalStok >= 0:
-                    if _ubah<0:
-                        print("Stok game", _nama, "berhasil dikurangi. Stok sekarang:", _totalStok)
-                        _gameData[i][5] = _totalStok
-                    else: # ubah>0
-                        print("Stok game", _nama, "berhasil ditambah. Stok sekarang:", _totalStok)
-                        _gameData[i][5] = _totalStok
-                else: # totalstok<0
-                    print("Stok game", _nama, "gagal dikurangi karena stok kurang. Stok sekarang:", _stok)
+                if _ubah == "":
+                    print("Jumlah tidak ada! Silakan coba lagi.")
+                else: 
+                    _totalStok = _stok + _ubah
+                    if _totalStok >= 0:
+                        if _ubah<0:
+                            print("Stok game", _nama, "berhasil dikurangi. Stok sekarang:", _totalStok)
+                            _gameData[i][5] = _totalStok
+                        else: # ubah>0
+                            print("Stok game", _nama, "berhasil ditambah. Stok sekarang:", _totalStok)
+                            _gameData[i][5] = _totalStok
+                    else: # totalstok<0
+                        print("Stok game", _nama, "gagal dikurangi karena stok kurang. Stok sekarang:", _stok)
 
-                return _gameData
-    
+                    return _gameData
+        
         if _cekGame == 0:  # input id game tidak valid
             print()
             print("Tidak ada game dengan ID tersebut!")
