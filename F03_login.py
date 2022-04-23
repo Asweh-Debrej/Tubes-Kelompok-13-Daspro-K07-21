@@ -1,5 +1,5 @@
 import C01_fungsiDasar as fd
-import B03_cipher as cp
+import B01_cipher as cp
 
 def login(_usersData):
     # menerima dan memvalidasi input username dan input password agar dapat mengakses binomo
