@@ -122,7 +122,6 @@ def mintaCommand():
                     lg.listing_game(_gameData)
                     input("Tekan enter untuk melanjutkan\n")
                 elif command == "buygame":
-                    lg.listing_game(_gameData)
                     _wanted = input("Masukkan ID Game: ")   # Membeli game
                     if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
                         _history     = bg._ubahHistory(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
