@@ -76,15 +76,8 @@ def listing_game(game):
     print('')
     _skemaSorting = input("Skema sorting : ")
     
-    if(fd.len(_skemaSorting) == 6):
-        for x in range(6):
-            _skemaSorting[x] = _skemaSorting[x].lower()
-            
-        if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
-            selection_sort(_skemaSorting,_arrData)
-        else:
-            print("Skema sorting tidak valid")
-
+    if (_skemaSorting == "tahun+" or _skemaSorting == "tahun-" or _skemaSorting == "harga+" or _skemaSorting == "harga-" or _skemaSorting == ""):
+        selection_sort(_skemaSorting,_arrData)
     else:
         print("Skema sorting tidak valid")
 
