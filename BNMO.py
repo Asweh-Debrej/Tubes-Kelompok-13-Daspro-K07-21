@@ -60,13 +60,13 @@ _gameData = [["0", "1", "2", 2000, 0, 0]]
 5 : stok
 """
 
-_history = [["1", "2", 0, "4", 2000]]
+_history = [["0", "1", 0, "3", 2000]]
 """Diimport dari riwayat.csv sebagai variabel global
-1 : id game
-2 : nama game
-3 : harga game
-4 : id pembeli
-5 : tahun pembelian
+0 : id game
+1 : nama game
+2 : harga game
+3 : id pembeli
+4 : tahun pembelian
 """
 
 _possession = [["0", "1"]]
