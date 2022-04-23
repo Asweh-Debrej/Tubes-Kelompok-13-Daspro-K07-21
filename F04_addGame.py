@@ -39,7 +39,7 @@ def askRelease():
     except:
         if not releaseYear:
             releaseYear = 2022
-            print("Harga diatur menjadi {} (gratis)".format(releaseYear))
+            print("Tahun diatur menjadi {}.".format(releaseYear))
         else:
             print("Tahun rilis harus berupa bilangan bulat!")   # Tahun rilis mungkin saja sebelum masehi
             releaseYear = askRelease()
@@ -107,7 +107,7 @@ def addGame(gameData):
     stock = askStock()
 
     gameData = fd.append(gameData, [id, gName, category, releaseYear, price, stock])
-    print("Game {} berhasil ditambahkan dengan id: {}".format())
+    print("\nGame {} berhasil ditambahkan dengan id = {}.".format(gName, id))
 
     return gameData
 

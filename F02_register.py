@@ -74,6 +74,7 @@ def register(usersData):
     password = askPass(name, userName)
     id = "U" + '0'*(3 - fd.len(str(fd.len(usersData)))) + str(fd.len(usersData))
     usersData = fd.append(usersData, [id, userName, name, password, "user", 0])
+    print("\nAkun {} berhasil dibuat.".format(userName))
 
     return usersData
 
