@@ -72,7 +72,7 @@ def listing_game(_gameData):
     print("     - harga+    : mensortir berdasarkan harga termurah -> termahal ")
     print("     - harga-    : mensortir berdasarkan harga termahal -> termurah ")
     print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
-    print("     - tahun+    : mensortir berdasarkan tahun rilis terlama -> terbaru ")
+    print("     - tahun-    : mensortir berdasarkan tahun rilis terbaru -> terlama ")
     print('')
     _skemaSorting = input("Skema sorting : ")
     
