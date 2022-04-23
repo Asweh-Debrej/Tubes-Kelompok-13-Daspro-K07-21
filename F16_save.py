@@ -19,7 +19,7 @@ def simpan(_arrData, tipe,cari):
 
     directory = os.getcwd()
     _daftarFolder = []
-    for dirs, in os.walk(directory):
+    for root, dirs, files, in os.walk(directory):
         _daftarFolder += dirs
 
 
