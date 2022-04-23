@@ -36,7 +36,7 @@ def search_my_game(_possession,_gamedata,_loggedUser):
                if(_possession[m][1]==username):
                  
                  for j in range (k):
-                    if(_possession[m][0]==_gamedata[j][0] and str1.lower() == _gamedata[j][0].lower() and str2 ==_gamedata[j][4] ):
+                    if(_possession[m][0]==_gamedata[j][0] and str1.lower() == _gamedata[j][0].lower() and int(str2) ==_gamedata[j][4] ):
                          print()
                          t+=1
                          print(t,end=". ")
