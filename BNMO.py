@@ -170,7 +170,7 @@ def mintaCommand():
                     fb.blit(_loggedUser, cmdInput)
                     running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)
                     if running == 0:
-                        print("Selamat menikmati hari anda :(")
+                        print("Selamat menikmati hari anda :D")
                         input("\nTekan enter untuk keluar program\n")
                 elif command == "save":
                     fb.blit(_loggedUser, cmdInput)
