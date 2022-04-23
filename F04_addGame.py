@@ -1,16 +1,16 @@
 import C01_fungsiDasar as fd
 
-def askGName(gameData):
+def askGName(_gameData):
     """Meminta nama game.
     
     Mengembalikan nama game yang sudah valid."""
     gName = fd.strip(input("Nama game : "))
     if not gName:
         print("Nama game tidak boleh kosong!")
-        gName = askGName(gameData)
-    elif fd.mtrxFind(gameData, gName, 1) != -1:
+        gName = askGName(_gameData)
+    elif fd.mtrxFind(_gameData, gName, 1) != -1:
         print("Game tersebut sudah ada!")
-        gName = askGName(gameData)
+        gName = askGName(_gameData)
 
     return gName
 
@@ -93,21 +93,21 @@ def askStock():
     return stock
 
 
-def addGame(gameData):
+def addGame(_gameData):
     """Menambahkan game.
 
-    Mengembalikan matriks gameData yang sudah diubah"""
-    id = "G" + '0'*(3 - fd.len(str(fd.len(gameData)))) + str(fd.len(gameData))
-    gName = askGName(gameData)
+    Mengembalikan matriks _gameData yang sudah diubah"""
+    id = "G" + '0'*(3 - fd.len(str(fd.len(_gameData)))) + str(fd.len(_gameData))
+    gName = askGName(_gameData)
     category = askCategory()
     releaseYear = askRelease()
     price = askPrice()
     stock = askStock()
 
-    gameData = fd.append(gameData, [id, gName, category, releaseYear, price, stock])
+    _gameData = fd.append(_gameData, [id, gName, category, releaseYear, price, stock])
     print("\nGame {} berhasil ditambahkan dengan id = {}.".format(gName, id))
 
-    return gameData
+    return _gameData
 
 
 if __name__=="__main__":
