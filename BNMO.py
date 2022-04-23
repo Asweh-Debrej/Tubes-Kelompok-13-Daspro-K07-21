@@ -29,35 +29,35 @@ _userCmds = ["login", "store", "buygame", "listgame", "searchmygame", "storesear
 _valCommand = fb.merge(_adminCmds, _userCmds)
 
 
-_loggedUser = ["1", "2", "3", "4", "5", 0]
+_loggedUser = ["0", "1", "2", "3", "4", 0]
 """Data user yang telah login
-1 : id
-2 : username
-3 : nama
-4 : password
-5 : role (admin/user)
-6 : saldo
-"""
-
-
-_usersData = [["1", "2", "3", "4", "5", 0]]
-"""Diimport dari user.csv sebagai variabel global
-1 : id
-2 : username
-3 : nama
-4 : password
-5 : role (admin/user)
-6 : saldo
-"""
-
-_gameData = [["1", "2", "3", 2000, 0, 0]]
-"""Diimport dari game.csv sebagai variabel global
-1 : id
+0 : id
+1 : username
 2 : nama
-3 : kategori
-4 : tahun rilis
-5 : harga
-6 : stok
+3 : password
+4 : role (admin/user)
+5 : saldo
+"""
+
+
+_usersData = [["0", "1", "2", "3", "4", 0]]
+"""Diimport dari user.csv sebagai variabel global
+0 : id
+1 : username
+2 : nama
+3 : password
+4 : role (admin/user)
+5 : saldo
+"""
+
+_gameData = [["0", "1", "2", 2000, 0, 0]]
+"""Diimport dari game.csv sebagai variabel global
+0 : id
+1 : nama
+2 : kategori
+3 : tahun rilis
+4 : harga
+5 : stok
 """
 
 _history = [["1", "2", 0, "4", 2000]]
@@ -69,10 +69,10 @@ _history = [["1", "2", 0, "4", 2000]]
 5 : tahun pembelian
 """
 
-_possession = [["1", "2"]]
+_possession = [["0", "1"]]
 """Diimport dari kepemilikan.csv sebagai variabel global
-1 : id game
-2 : id pemilik
+0 : id game
+1 : id pemilik
 """
 
 
