@@ -51,7 +51,7 @@ def search_game_at_store(_gamedata):
 
 
          for j in range (k):
-             if(str3 == str(_gamedata[j][2]) and str4.lower() ==_gamedata[j][3].lower() and str5 == str(_gamedata[j][4])):
+             if(str3 == str(_gamedata[j][4]) and str4.lower() ==_gamedata[j][2].lower() and str5 == str(_gamedata[j][3])):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -68,7 +68,7 @@ def search_game_at_store(_gamedata):
     elif(str3!='' and str4!=''):
 
          for j in range (k):
-             if(str3 == str(_gamedata[j][2]) and str4.lower() ==_gamedata[j][3].lower()):
+             if(str3 == str(_gamedata[j][4]) and str4.lower() ==_gamedata[j][2].lower()):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -85,7 +85,7 @@ def search_game_at_store(_gamedata):
     elif(str4!='' and str5!=''):
 
          for j in range (k):
-             if(str4.lower() ==_gamedata[j][3].lower() and str5 == str(_gamedata[j][4])):
+             if(str4.lower() ==_gamedata[j][2].lower() and str5 == str(_gamedata[j][3])):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -102,7 +102,7 @@ def search_game_at_store(_gamedata):
     elif(str3!='' and str5!=''):
 
          for j in range (k):
-             if(str3 == str(_gamedata[j][2])) and str5 == str(_gamedata[j][4]):
+             if(str3 == str(_gamedata[j][4])) and str5 == str(_gamedata[j][3]):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -118,7 +118,7 @@ def search_game_at_store(_gamedata):
 
     elif(str3!=''):
          for j in range (k):
-             if(str3 == str(_gamedata[j][2])):
+             if(str3 == str(_gamedata[j][4])):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -135,7 +135,7 @@ def search_game_at_store(_gamedata):
     elif(str4!=''):
                     
          for j in range (k):
-             if(str4.lower() == _gamedata[j][3].lower()):
+             if(str4.lower() == _gamedata[j][2].lower()):
                  print()
                  t+=1
                  print(t,end=". ")
@@ -151,7 +151,7 @@ def search_game_at_store(_gamedata):
 
     elif(str5!=''):
          for j in range (k):
-             if(str5 ==str(_gamedata[j][4])):
+             if(str5 ==str(_gamedata[j][3])):
                  print()
                  t+=1
                  print(t,end=". ")
