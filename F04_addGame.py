@@ -107,7 +107,7 @@ def addGame(gameData):
     stock = askStock()
 
     gameData = fd.append(gameData, [id, gName, category, releaseYear, price, stock])
-    print("Game {} berhasil ditambahkan dengan id: {}".format())
+    print("Game {} berhasil ditambahkan dengan id: {}".format(gName,id))
 
     return gameData
 
