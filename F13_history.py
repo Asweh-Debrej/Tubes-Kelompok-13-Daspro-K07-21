@@ -1,5 +1,5 @@
-import fungsiDasar as fd
-import fungsiBuatan as fb
+import C01_fungsiDasar as fd
+import C02_fungsiBuatan as fb
 
 def history(history, loggedUser):
     """Menampilkan riwayat pembelian dari matriks berukuran minimal 5x1

@@ -1,5 +1,5 @@
-import fungsiDasar as fd
-import cipher as cp
+import C01_fungsiDasar as fd
+import B03_cipher as cp
 
 _uNameChars = []
 

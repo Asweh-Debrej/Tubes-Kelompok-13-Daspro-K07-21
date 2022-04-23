@@ -1,4 +1,4 @@
-import fungsiDasar as fd
+import C01_fungsiDasar as fd
 
 _seed = 16
 _cipherModifier = 6969

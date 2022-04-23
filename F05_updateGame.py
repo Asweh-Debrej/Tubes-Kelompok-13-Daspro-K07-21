@@ -1,4 +1,4 @@
-import fungsiDasar as fd
+import C01_fungsiDasar as fd
 
 def ubah_value(_indeks, _gameData, _variabel, j):
     """ mengubah value field j jika input tidak kosong """

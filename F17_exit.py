@@ -1,5 +1,5 @@
-import fungsiDasar as fd
-import save as sv
+import C01_fungsiDasar as fd
+import F16_save as sv
 
 def exit(_usersData, _gameData, _history, _possession, loggedIn):
     if not loggedIn:

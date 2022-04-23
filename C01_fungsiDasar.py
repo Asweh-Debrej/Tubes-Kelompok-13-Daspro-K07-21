@@ -1,12 +1,3 @@
-def abs(X: float):
-    """Mengembalikan mutlak nilai yang diberikan
-    """
-    if X < 0:
-        X *= (-1)
-    
-    return X
-
-
 def sum(arr):
     """Mengembalikan jumlah bilangan dari seluruh elemen arr.
     """
@@ -27,16 +18,6 @@ def len(arr):       # Penggunaan len(arr) dengan arr bertipe
         length += 1
 
     return length
-
-
-def toList(arr):
-    """Mengubah suatu array menjadi array bertipe list
-    """
-    result = []
-    for i in arr:
-        result += [i]
-    
-    return result
 
 
 def append(arr, X):
@@ -117,31 +98,6 @@ def replace(string: str, chars1, chars2):
     return result
 
 
-def sorted(arr):
-    """Mengembalikan array yang sudah disortir dari array yang diberikan.
-    """
-    length = len(arr)
-    for i in range(length):
-        for j in range(i + 1, length):
-            if(arr[i] > arr[j]):
-                temp = arr[i]
-                arr[i] = arr[j]
-                arr[j] = temp
-    
-    return arr
-
-
-def count(arr, X) -> int:
-    """Mengembalikan banyak X dari array yang diberikan.
-    """
-    n = 0
-    for i in arr:
-        if X == i:
-            n += 1
-
-    return n
-
-
 def find(arr, X):
     """Mengembalikan indeks ditemukannya X pertama pada arr.
 
@@ -156,19 +112,6 @@ def find(arr, X):
             return i
     
     return -1
-
-
-def fullFind(arr, X):
-    """Mengembalikan indeks-indeks ditemukannya X pada arr dalam bentuk list.
-
-    Mengembalikan [] bila tidak ditemukan X pada arr.
-    """
-    indexes = []
-    for i in range(len(arr)):
-        if len[i] == X:
-            append(indexes, i)
-
-    return indexes
 
 
 def mtrxFind(matrix, X, idxSlug):
@@ -211,40 +154,10 @@ def split(string, pattern= ' ', arr = [], ignoreNull = False):
         return append(arr, string)
 
 
-def valIn(val, arr):
-    """Mengembalikan True apabila val ditemukan dalam arr, False jika tidak
-    """
-    found = False
-    if type(arr) == str and find(arr, val) != -1:
-        found = True
-    elif type(arr) == list or type(arr) == tuple:
-        i = 0
-        while not found and i < len(arr):
-            if arr[i] == val:
-                found = True
-            i += 1
-    
-    return found
-
-
-def valAll(val, arr):
-    """Mengembalikan True apabila semua isi arr adalah val, False jika tidak
-    """
-    allIn = True
-    i = 0
-    while allIn and i < len(arr):
-        if arr[i] != val:
-            allIn = False
-        i += 1
-    
-    return allIn
-
-
 
 
 
 
 
 if __name__ == "__main__":                  # Kalau mau tes kode silahkan ubah isi ini dan run codenya
-    isi = ['1', '1', '1', '1']
-    print(valAll('1', isi))
+    pass

@@ -1,4 +1,4 @@
-import fungsiDasar as fd
+import C01_fungsiDasar as fd
 
 def ubahStok(_gameData):
     # mengubah data stok game
