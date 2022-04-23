@@ -98,30 +98,38 @@ def mintaCommand():
     global _role, _loggedIn, _adminCmds, _userCmds, _valCommand, _loggedUser, _usersData, _gameData, _history, _possession, running
     if _loggedIn:
         fb.blit(_loggedUser, "Masukkan perintah")
-    command = fd.replace(fd.replace(fd.replace(input("\n>>> ").lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
+    cmdInput = input(">>> ").strip()
+    command = fd.replace(fd.replace(fd.replace(cmdInput.lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
     print()
     if fd.find(_valCommand, command) != -1:                 # validasi input command
         if _loggedIn:
             if roleCmdIsValid(_role, command, _adminCmds, _userCmds):              # validasi perintah admin dan user
                 if command == "register":
+                    fb.blit(_loggedUser, cmdInput)
                     _usersData = reg.register(_usersData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "login":
+                    fb.blit(_loggedUser, cmdInput)
                     print('Anda sudah login! Untuk melihat list command, ketik "help".')
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "addgame":
+                    fb.blit(_loggedUser, cmdInput)
                     _gameData = ag.addGame(_gameData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "updategame":
+                    fb.blit(_loggedUser, cmdInput)
                     ug.ubahGame(_gameData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "updatestock":
+                    fb.blit(_loggedUser, cmdInput)
                     us.ubahStok(_gameData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "store":           # Melihat daftar game yang ada     
+                    fb.blit(_loggedUser, cmdInput)
                     lg.listing_game(_gameData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "buygame":
+                    fb.blit(_loggedUser, cmdInput)
                     lg.listing_game(_gameData)
                     _wanted = input("Masukkan ID Game: ")   # Membeli game
                     if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
@@ -130,32 +138,40 @@ def mintaCommand():
                         _loggedUser  = bg._ubahLoggedUsers(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
                         _usersData   = bg._ubahUsersData(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
                         _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-                    input("Tekan enter untuk melanjutkan\n") 
+                    input("\nTekan enter untuk melanjutkan\n") 
                 elif command == "listgame":
+                    fb.blit(_loggedUser, cmdInput)
                     lgsd.lihat(_loggedUser[0],_gameData,_possession)            # melihat daftar game yang dimiliki 
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "searchmygame":
+                    fb.blit(_loggedUser, cmdInput)
                     F10.search_my_game(_possession,_gameData,_loggedUser)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "storesearch":
+                    fb.blit(_loggedUser, cmdInput)
                     F11.search_game_at_store(_gameData)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "history":
+                    fb.blit(_loggedUser, cmdInput)
                     hs.history(_history, _loggedUser)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "topup":
+                    fb.blit(_loggedUser, cmdInput)
                     _usersData = topup.topup(_usersData)
                     _loggedUser = _usersData[fd.mtrxFind(_usersData, _loggedUser[1], 1)]
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "help":
+                    fb.blit(_loggedUser, cmdInput)
                     help.help(_role)
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "exit":
+                    fb.blit(_loggedUser, cmdInput)
                     running = exit.exit(_usersData, _gameData, _history, _possession, _loggedIn)
                     if running == 0:
                         print("Selamat menikmati hari anda :(")
                         input("\nTekan enter untuk keluar program\n")
                 elif command == "save":
+                    fb.blit(_loggedUser, cmdInput)
                     cari = input("Masukkan nama folder penyimpanan : ")         # Melakukan save
                     print("")
                     print("Saving")
@@ -164,14 +180,16 @@ def mintaCommand():
                     sv.simpan(_usersData,"user",cari)
                     sv.simpan(_history,"riwayat",cari)
                     print("Data telah disimpan pada folder " + cari +"!")
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                     
                 elif command == "magicconch":
+                    fb.blit(_loggedUser, cmdInput)
                     mcs.kerangAjaib()                       # Kerang Ajaib
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
                 elif command == "tictactoe" :
+                    fb.blit(_loggedUser, cmdInput)
                     tt.tictactoe()
-                    input("Tekan enter untuk melanjutkan\n")
+                    input("\nTekan enter untuk melanjutkan\n")
             else: # command tidak valid dengan _role
                 pass
 
@@ -192,7 +210,7 @@ def mintaCommand():
     else: #command != _valCommand[i]
         print('Command tidak ada. Untuk melihat list command, ketik "help".')
         if _loggedIn:
-            input("Tekan enter untuk melanjutkan\n")
+            input("\nTekan enter untuk melanjutkan\n")
         
                 
 
