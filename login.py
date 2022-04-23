@@ -22,6 +22,7 @@ def login(_usersData):
                 _loggedUser[5] = _usersData[i][5]
 
                 print('Halo', _loggedUser[2], '! Selamat datang di "Binomo".')
+                print("Anda memiliki saldo sebesar", _loggedUser[5])
             
                 return _loggedUser
 
