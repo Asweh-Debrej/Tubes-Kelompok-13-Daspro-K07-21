@@ -21,9 +21,11 @@ def ubahStok(_gameData):
                         if _ubah<0:
                             print("Stok game", _nama, "berhasil dikurangi. Stok sekarang:", _totalStok)
                             _gameData[i][5] = _totalStok
-                        else: # ubah>0
+                        elif _ubah>0 :
                             print("Stok game", _nama, "berhasil ditambah. Stok sekarang:", _totalStok)
                             _gameData[i][5] = _totalStok
+                        else: # _ubah = 0
+                            print("Stok game", _nama, "tidak berubah. Stok sekarang:", _totalStok)
                     else: # totalstok<0
                         print("Stok game", _nama, "gagal dikurangi karena stok kurang. Stok sekarang:", _stok)
 
