@@ -1,4 +1,5 @@
 import C01_fungsiDasar as fd
+import C02_fungsiBuatan as fb
 
 def ubah_value(_indeks, _gameData, _variabel, j):
     """ mengubah value field j jika input tidak kosong """
@@ -20,14 +21,15 @@ def ubahGame(_gameData):
 
                 _namaBaru = input("Masukkan nama game: ")
                 _kategoriBaru = input("Masukkan kategori: ")
-                _tahunRilisBaru = int(input("Masukkan tahun rilis: "))
-                _hargaBaru = int(input("Masukkan harga: "))
+                _tahunRilisBaru = input("Masukkan tahun rilis: ")
+                _hargaBaru = input("Masukkan harga: ")
 
                 # mengubah value field spesifikasi data game sesuai input yang diberikan   
                 ubah_value(i, _gameData, _namaBaru, 1)
                 ubah_value(i, _gameData, _kategoriBaru, 2)
                 ubah_value(i, _gameData, _tahunRilisBaru, 3)
                 ubah_value(i, _gameData, _hargaBaru, 4)
+                fb.ubahStringData(_gameData)
 
                 return _gameData
         
