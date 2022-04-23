@@ -166,3 +166,24 @@ def search_game_at_store(_gamedata):
 
              print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
+    else :
+         for j in range (k):
+            print()
+            t+=1
+            print(t,end=". ")
+            print(_gamedata[j][0],end=" | ")
+            print(_gamedata[j][1],end=" | ")
+            print(_gamedata[j][2],end=" | ")
+            print(_gamedata[j][3],end=" | ")
+            print(_gamedata[j][4],end="")
+                    
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+            
+      
+
+
+            
+      
+
