@@ -76,23 +76,23 @@ _possession = [["1", "2"]]
 """
 
 
-def roleCmdIsValid(role, command, adminCmds, userCmds):
+def roleCmdIsValid(_role, command, _adminCmds, _userCmds):
     """ validasi command sesuai role """
-    cek_command = False
-    if role == "admin":
-        if fd.find(adminCmds, command) != -1:
-            cek_command = True
+    _cekCommand = False
+    if _role == "admin":
+        if fd.find(_adminCmds, command) != -1:
+            _cekCommand = True
         else:
             print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
     else: #_role == "user"
-        if fd.find(userCmds, command) != -1:
-            cek_command = True
+        if fd.find(_userCmds, command) != -1:
+            _cekCommand = True
         else:
             print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
 
-    return cek_command
+    return _cekCommand
 
 
 def mintaCommand():
