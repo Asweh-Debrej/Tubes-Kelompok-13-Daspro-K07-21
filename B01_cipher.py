@@ -50,3 +50,6 @@ def decipher(string, seed= _seed, modifier= _cipherModifier):
 
     string = fd.join(strArr, '')
     return string
+
+if __name__ == "__main__":
+    print(cipher(input("Masukkan password yang ingin disandikan : ")))
