@@ -62,21 +62,21 @@ def askPass(name: str, uName: str):
 
     return password
 
-def register(usersData):
+def register(_usersData):
     """Mendaftarkan pengguna baru.
 
-    Mengembalikan matriks usersData yang sudah diubah."""
+    Mengembalikan matriks _usersData yang sudah diubah."""
     usedUName = []
-    for i in fd.sliced(usersData, 1):
+    for i in fd.sliced(_usersData, 1):
         usedUName = fd.append(usedUName, i[1])
     name = askName()
     userName = askUName(usedUName)
     password = askPass(name, userName)
-    id = "U" + '0'*(3 - fd.len(str(fd.len(usersData)))) + str(fd.len(usersData))
-    usersData = fd.append(usersData, [id, userName, name, password, "user", 0])
+    id = "U" + '0'*(3 - fd.len(str(fd.len(_usersData)))) + str(fd.len(_usersData))
+    _usersData = fd.append(_usersData, [id, userName, name, password, "user", 0])
     print("\nAkun {} berhasil dibuat.".format(userName))
 
-    return usersData
+    return _usersData
 
     
 if __name__ == "__main__":
