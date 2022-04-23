@@ -28,70 +28,70 @@ _userCmds = ["login", "store", "buygame", "listgame", "searchmygame", "storesear
 _valCommand = fb.merge(_adminCmds, _userCmds)
 
 
-_loggedUser = ["1", "2", "3", "4", "5", 0]
+_loggedUser = ["0", "1", "2", "3", "4", 0]
 """Data user yang telah login
-1 : id
-2 : username
-3 : nama
-4 : password
-5 : role (admin/user)
-6 : saldo
-"""
-
-
-_usersData = [["1", "2", "3", "4", "5", 0]]
-"""Diimport dari user.csv sebagai variabel global
-1 : id
-2 : username
-3 : nama
-4 : password
-5 : role (admin/user)
-6 : saldo
-"""
-
-_gameData = [["1", "2", "3", 2000, 0, 0]]
-"""Diimport dari game.csv sebagai variabel global
-1 : id
+0 : id
+1 : username
 2 : nama
-3 : kategori
-4 : tahun rilis
-5 : harga
-6 : stok
+3 : password
+4 : role (admin/user)
+5 : saldo
 """
 
-_history = [["1", "2", 0, "4", 2000]]
+
+_usersData = [["0", "1", "2", "3", "4", 0]]
+"""Diimport dari user.csv sebagai variabel global
+0 : id
+1 : username
+2 : nama
+3 : password
+4 : role (admin/user)
+5 : saldo
+"""
+
+_gameData = [["0", "1", "2", 2000, 0, 0]]
+"""Diimport dari game.csv sebagai variabel global
+0 : id
+1 : nama
+2 : kategori
+3 : tahun rilis
+4 : harga
+5 : stok
+"""
+
+_history = [["0", "1", 0, "3", 2000]]
 """Diimport dari riwayat.csv sebagai variabel global
-1 : id game
-2 : nama game
-3 : harga game
-4 : id pembeli
-5 : tahun pembelian
+0 : id game
+1 : nama game
+2 : harga game
+3 : id pembeli
+4 : tahun pembelian
 """
 
-_possession = [["1", "2"]]
+_possession = [["0", "1"]]
 """Diimport dari kepemilikan.csv sebagai variabel global
-1 : id game
-2 : id pemilik
+0 : id game
+1 : id pemilik
 """
 
 
-def roleCmdIsValid(role, command, adminCmds, userCmds):
+def roleCmdIsValid(_role, command, _adminCmds, _userCmds):
     """ validasi command sesuai role """
-    cek_command = False
-    if role == "admin":
-        if fd.find(adminCmds, command) != -1:
-            cek_command = True
+    _cekCommand = False
+    if _role == "admin":
+        if fd.find(_adminCmds, command) != -1:
+            _cekCommand = True
         else:
             print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
     else: #_role == "user"
-        if fd.find(userCmds, command) != -1:
-            cek_command = True
+        if fd.find(_userCmds, command) != -1:
+            _cekCommand = True
         else:
             print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
 
-    return cek_command
+    return _cekCommand
 
 
 def mintaCommand():
