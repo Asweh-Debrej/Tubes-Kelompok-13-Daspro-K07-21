@@ -84,12 +84,14 @@ def roleCmdIsValid(_role, command, _adminCmds, _userCmds):
         else:
             print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
+            input("\nTekan enter untuk melanjutkan\n")
     else: #_role == "user"
         if fd.find(_userCmds, command) != -1:
             _cekCommand = True
         else:
             print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
             print('Untuk melihat list command, ketik "help"')
+            input("\nTekan enter untuk melanjutkan\n")
 
     return _cekCommand
 
