@@ -55,18 +55,18 @@ def selection_sort(_skemaSorting,_arrData):
     print('‾'*fd.len(line1))
 
 
-def listing_game(game):
+def listing_game(_gameData):
     # Fungsi utama
-    _banyakData = fd.len(game)
+    _banyakData = fd.len(_gameData)
     _arrData= [[0 for x in range(6)] for x in range(_banyakData)]
 
     for x in range(_banyakData):
-        _arrData[x][0]  = game[x][0]
-        _arrData[x][1]  = game[x][1]
-        _arrData[x][2]  = game[x][2]
-        _arrData[x][3]  = game[x][3]
-        _arrData[x][4]  = game[x][4]
-        _arrData[x][5]  = game[x][5]
+        _arrData[x][0]  = _gameData[x][0]
+        _arrData[x][1]  = _gameData[x][1]
+        _arrData[x][2]  = _gameData[x][2]
+        _arrData[x][3]  = _gameData[x][3]
+        _arrData[x][4]  = _gameData[x][4]
+        _arrData[x][5]  = _gameData[x][5]
 
     print("Daftar skema sorting : ")
     print("     - harga+    : mensortir berdasarkan harga termurah -> termahal ")
@@ -80,4 +80,5 @@ def listing_game(game):
         selection_sort(_skemaSorting,_arrData)
     else:
         print("Skema sorting tidak valid")
+
 
