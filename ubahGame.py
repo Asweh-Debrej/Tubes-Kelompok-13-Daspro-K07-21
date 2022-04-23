@@ -20,8 +20,8 @@ def ubahGame(_gameData):
 
                 _namaBaru = input("Masukkan nama game: ")
                 _kategoriBaru = input("Masukkan kategori: ")
-                _tahunRilisBaru = input("Masukkan tahun rilis: ")
-                _hargaBaru = input("Masukkan harga: ")
+                _tahunRilisBaru = int(input("Masukkan tahun rilis: "))
+                _hargaBaru = int(input("Masukkan harga: "))
 
                 # mengubah value field spesifikasi data game sesuai input yang diberikan   
                 ubah_value(i, _gameData, _namaBaru, 1)
@@ -34,3 +34,4 @@ def ubahGame(_gameData):
         if _cekGame == 0:  # input id game tidak valid
             print()
             print("Tidak ada game dengan ID tersebut!")
+
