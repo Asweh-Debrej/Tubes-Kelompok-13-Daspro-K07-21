@@ -25,7 +25,7 @@ def check(n,toe):
             for j in range(3):
                 print(toe[i][j], end="")
             print()
-        print("X menang secara horizontal")
+        print("X menang secara diagonal")
         return -1
 
     if (toe[0][0] == 'O' and toe[0][1] == 'O' and toe[0][2] == 'O' or toe[1][0] == 'O' and toe[1][1] == 'O' and toe[1][
@@ -52,7 +52,7 @@ def check(n,toe):
             for j in range(3):
                 print(toe[i][j], end="")
             print()
-        print("O menang secara horizontal")
+        print("O menang secara diagonal")
         return -1
 
     return n
