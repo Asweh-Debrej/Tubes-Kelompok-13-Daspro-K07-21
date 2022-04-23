@@ -19,7 +19,7 @@ def simpan(_arrData, tipe,cari):
 
     directory = os.getcwd()
     _daftarFolder = []
-    for root, dirs, files, in os.walk(directory):
+    for dirs, in os.walk(directory):
         _daftarFolder += dirs
 
 
@@ -30,20 +30,19 @@ def simpan(_arrData, tipe,cari):
 
     else:
         # Jika tidak ada folder
-        _path = os.path.join(directory,cari)
         os.makedirs(cari)
 
     if(tipe == "game"):
-        _gabung = [["id","nama","kategori","tahun_rilis","harga","stok"]]
+        # [["id","nama","kategori","tahun_rilis","harga","stok"]]
         buka = os.path.join(os.getcwd(), cari, "game.csv")
     elif(tipe == "kepemilikan"):
-        _gabung = [["game_id","user_id"]]
+        # [["game_id","user_id"]]
         buka = os.path.join(os.getcwd(), cari, "kepemilikan.csv")
     elif(tipe == "user"):
-        _gabung = [["id","username","nama","password","role","saldo"]]
+        # [["id","username","nama","password","role","saldo"]]
         buka = os.path.join(os.getcwd(), cari, "user.csv")
     else:
-        _gabung = [["game_id","nama","harga","user_id","tahun_beli"]]
+        # [["game_id","nama","harga","user_id","tahun_beli"]]
         buka = os.path.join(os.getcwd(), cari, "riwayat.csv")
 
     #_hasil = _ubahJadiString(_gabung) + _ubahJadiString(_arrData)

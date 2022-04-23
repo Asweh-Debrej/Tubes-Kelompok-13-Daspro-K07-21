@@ -1,7 +1,5 @@
 import C01_fungsiDasar as fd
 
-cancelMsg = ["batal", ]
-
 def askGName(gameData):
     """Meminta nama game.
     
