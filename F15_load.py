@@ -7,7 +7,7 @@ import C02_fungsiBuatan as fb
 def load():
     parser = argparse.ArgumentParser(usage= "Mohon masukkan nama folder!")
     
-    if len(sys.argv) == 2:
+    if fd.len(sys.argv) == 2:
         parser.add_argument('folder', type= str, help= "Nama folder harus berisi data program ini.")
         args = parser.parse_args()
         if os.path.isdir(sys.argv[1]):
