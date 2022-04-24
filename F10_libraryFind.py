@@ -27,9 +27,9 @@ def search_my_game(_possession,_gamedata,_loggedUser):
                               print(_gamedata[j][3],end=" | ")
                               print(_gamedata[j][4],end="")
                     
-               if(t==0):
-                    print()
-                    print("Tidak ada game pada inventory-mu yang memenuhi kriteria.",end="")
+          if(t==0):
+               print()
+               print("Tidak ada game pada inventory-mu yang memenuhi kriteria.",end="")
      elif(str1!='' and str2!=''):
 
           for m in range (x):
