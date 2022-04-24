@@ -1,7 +1,7 @@
 id;nama;kategori;tahun_rilis;harga;stok;
-G001;Aan Adventure;adventure;2020;10000;2;
+G001;Aan Adventure;adventure;2020;10000;1;
 G002;Aan Adventure 2;adventure;2003;12500;0;
 G003;Aan Adventure 3;adventure;2021;100000;1;
-G004;Aan Fortress 2;casual;2000;15000;4;
-G005;Aan Adventure 4;adventure;2006;21000;7;
-G006;Aan Fortress;casual;2004;17000;10;
+G004;Aan Fortress 2;casual;2000;15000;3;
+G005;Aan Adventure 4;adventure;2006;21000;6;
+G006;Aan Fortress;casual;2004;17000;9;
