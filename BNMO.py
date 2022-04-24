@@ -100,7 +100,7 @@ def mintaCommand():
     global _role, _loggedIn, _adminCmds, _userCmds, _valCommand, _loggedUser, _usersData, _gameData, _history, _possession, running
     if _loggedIn:
         fb.blit(_loggedUser, "Masukkan perintah")
-    cmdInput = input(">>> ").strip()
+    cmdInput = input("\n>>> ").strip()
     command = fd.replace(fd.replace(fd.replace(cmdInput.lower(), ' ', ''), '_', ''), '-', '')     # Toleransi bagi pengguna yang menggunakan (' '), ('_'), atau ('-') sebagai pengutaraan maksud perintah
     print()
     if fd.find(_valCommand, command) != -1:                 # validasi input command
