@@ -60,6 +60,8 @@ def printWelcome():
 
 
 def blit(loggedUser, additionalLine= ''):       # design
+    """Mencetak design ke layar
+    """
     maxLen = 0
     title = [
         "██████╗  ███╗   ██╗ ███╗   ███╗  ██████╗ ",
@@ -69,7 +71,7 @@ def blit(loggedUser, additionalLine= ''):       # design
         "██████╔╝ ██║ ╚████║ ██║ ╚═╝ ██║ ╚██████╔╝",
         "╚═════╝  ╚═╝  ╚═══╝ ╚═╝     ╚═╝  ╚═════╝ "                              
     ]
-    for line in title + [loggedUser[0] + loggedUser[1] + ' '*5, loggedUser[2] + ' '*5, "saldo" + ' '*5, "Logged as admin      " + str(loggedUser[5])]:
+    for line in title + [loggedUser[0] + loggedUser[1] + ' '*5, loggedUser[2] + ' '*5, "saldo" + ' '*5, "Logged as admin      " + str(loggedUser[5]), additionalLine + ' '*5]:
         if fd.len(line) > maxLen:
             maxLen = fd.len(line)
 
