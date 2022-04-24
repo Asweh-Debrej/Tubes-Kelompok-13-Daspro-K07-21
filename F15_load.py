@@ -7,7 +7,7 @@ import C02_fungsiBuatan as fb
 def load():
     parser = argparse.ArgumentParser(usage= "Mohon masukkan nama folder!")
     
-    if len(sys.argv) == 2:
+    if fd.len(sys.argv) == 2:
         parser.add_argument('folder', type= str, help= "Nama folder harus berisi data program ini.")
         args = parser.parse_args()
         if os.path.isdir(sys.argv[1]):
@@ -33,7 +33,7 @@ def load():
         else:
             print('Folder', sys.argv[1],'tidak ditemukan.')
 
-    elif len(sys.argv) == 1:
+    elif fd.len(sys.argv) == 1:
         print('Tidak ada nama folder yang diberikan. \"python BNMO.py <nama folder>\"')
 
     else:   # argumen lebih dari 2
