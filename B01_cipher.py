@@ -12,7 +12,7 @@ def cipher(string, seed= _seed, modifier= _cipherModifier):
 
     Modifier berupa angka bebas.
     """
-    if 1114112 % seed != 0:
+    if _maxOrd % seed != 0:
         print("""
         Peringatan : Seed yang dimasukkan bukan salah satu faktor 1114112.
         Seed akan diubah menjadi 16.
@@ -23,6 +23,8 @@ def cipher(string, seed= _seed, modifier= _cipherModifier):
     for i in range(fd.len(strArr)):
         ordinate = ord(strArr[i])
         ciphOrd = (ordinate//seed + 1) * seed - ordinate % seed - 1 + modifier
+        if ciphOrd > _maxOrd:
+            ciphOrd -= _maxOrd
         strArr[i] = chr(ciphOrd % _maxOrd)
 
     string = fd.join(strArr, '')
@@ -35,7 +37,7 @@ def decipher(string, seed= _seed, modifier= _cipherModifier):
 
     Modifier berupa angka bebas.
     """
-    if 1114112 % seed != 0:
+    if _maxOrd % seed != 0:
         print("""
         Peringatan : Seed yang dimasukkan bukan salah satu faktor 1114112.
         Seed akan diubah menjadi 16.
@@ -45,6 +47,8 @@ def decipher(string, seed= _seed, modifier= _cipherModifier):
     strArr = list(string)
     for i in range(fd.len(strArr)):
         ordinate = ord(strArr[i]) - modifier
+        if ordinate < 0:
+            ordinate += _maxOrd
         ciphOrd = (ordinate//seed + 1) * seed - ordinate % seed - 1
         strArr[i] = chr(ciphOrd % _maxOrd)
 
