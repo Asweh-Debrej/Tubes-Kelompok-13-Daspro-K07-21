@@ -174,7 +174,10 @@ def mintaCommand():
                         input("\nTekan enter untuk keluar program\n")
                 elif command == "save":
                     fb.blit(_loggedUser, cmdInput)
-                    cari = input("Masukkan nama folder penyimpanan : ")         # Melakukan save
+                    cari = input("Masukkan nama folder penyimpanan : ")
+                    if cari == '':
+                        print("Nama folder penyimpanan tidak bisa kosong!")         # Melakukan save
+                        cari = input("Masukkan nama folder penyimpanan : ")
                     print("")
                     print("Saving")
                     sv.simpan(_possession,"kepemilikan",cari)
