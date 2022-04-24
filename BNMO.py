@@ -224,7 +224,7 @@ running = True
 if __name__ == "__main__":   # Inti program
     data = loading.load()
     if data:    # apabila data tidak kosong atau dapat diproses
-        _usersData, _gameData, _history, _possession = data
+        _usersData, _gameData, _possession , _history = data
         fb.printWelcome()
         while running:
             mintaCommand()
