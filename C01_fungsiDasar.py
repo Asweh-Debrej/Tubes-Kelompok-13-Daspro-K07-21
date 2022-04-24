@@ -167,18 +167,6 @@ def valAll(val, arr):
     return allIn
 
 
-def valAll(val, arr):
-    """Mengembalikan True apabila semua isi arr adalah val, False jika tidak
-    """
-    allIn = True
-    i = 0
-    while allIn and i < len(arr):
-        if arr[i] != val:
-            allIn = False
-        i += 1
-    
-    return allIn
-
 
 
 
