@@ -1,7 +1,7 @@
 import C01_fungsiDasar as fd
 import datetime
 
-def cekGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def cekGame(_wanted, _gameData):
      # Mengecek apakah game tersebut ada atau tidak
      _panjangArray = fd.len(_gameData)
      _found = False
@@ -10,7 +10,7 @@ def cekGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
                _found = True
      return _found
 
-def cekKepemilikanGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def cekKepemilikanGame(_wanted,_loggedUser, _possession):
      # Mencari apakah kita sudah memiliki game tersebut
      _panjangArray = fd.len(_possession)
      _ketemu = False
@@ -20,28 +20,28 @@ def cekKepemilikanGame(_wanted,_loggedUser, _possession, _gameData, _usersData, 
      return _ketemu
 
 
-def cekHarga(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def cekHarga(_wanted,_gameData):
      # Mencari harga dari game tersebut
      _panjangArray = fd.len(_gameData)
      for x in range(_panjangArray):
           if(_gameData[x][0] == _wanted):
                return _gameData[x][4]
 
-def cekStok(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def cekStok(_wanted, _gameData):
      # Mencari stok dari game tersebut
      _panjangArray = fd.len(_gameData)
      for x in range(_panjangArray):
           if(_gameData[x][0] == _wanted):
                return _gameData[x][5]
 
-def gameIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def gameIndex(_wanted, _gameData):
      # mencari indeks game tersebut
      _panjangArray = fd.len(_gameData)
      for x in range(_panjangArray):
           if(_wanted == _gameData[x][0]):
                return x
 
-def userIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def userIndex(_loggedUser, _usersData):
      # Mencari indeks user tersebut
     _panjangArray = fd.len(_usersData)
     for x in range(_panjangArray):
@@ -49,43 +49,42 @@ def userIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
             return x
 
 #-----------------------------
-def _ubahPossession(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def _ubahPossession(_wanted,_loggedUser, _possession):
      # Ganti _possession
      _tambahKepemilikan = [[_wanted, _loggedUser[0]]]
      _possession += _tambahKepemilikan
 
      return _possession
 
-def _ubahGameData(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def _ubahGameData(_wanted,_gameData):
      # ganti _gameData
-     _gameIndex = gameIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
+     _gameIndex = gameIndex(_wanted, _gameData)
      _gameData[_gameIndex][5] -= 1
 
      return _gameData
 
 
-def _ubahUsersData(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def _ubahUsersData(_wanted,_loggedUser, _gameData, _usersData):
      # ganti _userData
-     _userIndex = userIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
-     _price = cekHarga(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+     _userIndex = userIndex(_loggedUser, _usersData)
+     _price = cekHarga(_wanted, _gameData)
      _usersData[_userIndex][5] -= _price
 
      return _usersData
 
 
-def _ubahLoggedUsers(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def _ubahLoggedUsers(_wanted,_loggedUser, _gameData):
      # ganti _loggedUser
-     _price = cekHarga(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-     _userIndex = userIndex(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+     _price = cekHarga(_wanted, _gameData)
      _loggedUser[5] -= _price
 
      return _loggedUser
 
-def _ubahHistory(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def _ubahHistory(_wanted,_loggedUser, _gameData, _history):
      # ganti _history
      _sekarang = datetime.datetime.now()
      _sekarang = _sekarang.year
-     _gameIndex = gameIndex(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+     _gameIndex = gameIndex(_wanted, _gameData)
 
      _tambahRiwayat = [[_wanted, _gameData[_gameIndex][1], _gameData[_gameIndex][4], _loggedUser[0], _sekarang]]
      _history += _tambahRiwayat
@@ -94,18 +93,12 @@ def _ubahHistory(_wanted,_loggedUser, _possession, _gameData, _usersData, _histo
 
 
 
-
-
-
-
-
-
-def beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
+def beli(_wanted,_loggedUser, _possession, _gameData, _usersData):
 
      # Fungsi Utama
 
-     _gameIndex = gameIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
-     _userIndex = userIndex(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
+     _gameIndex = gameIndex(_wanted, _gameData)
+     _userIndex = userIndex(_loggedUser, _usersData)
      _bisa = False
      
      if(_wanted == ''):
@@ -114,17 +107,17 @@ def beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history):
 
 
      # Cek apakah input Valid
-     if(cekGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
+     if(cekGame(_wanted, _gameData)):
 
           # Cek _possession game
-          if not((cekKepemilikanGame(_wanted,_loggedUser, _possession, _gameData, _usersData, _history))):
+          if not((cekKepemilikanGame(_wanted,_loggedUser, _possession))):
 
                #Cek Saldo
-               _price = cekHarga(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
+               _price = cekHarga(_wanted, _gameData)
                if(_price <= (_usersData[_userIndex][5])):
 
                     #Cek stok
-                    _stok = cekStok(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)
+                    _stok = cekStok(_wanted, _gameData)
                     if(_stok >0):
 
                          _bisa = True

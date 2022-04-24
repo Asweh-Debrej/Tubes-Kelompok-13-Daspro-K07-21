@@ -134,12 +134,12 @@ def mintaCommand():
                     fb.blit(_loggedUser, cmdInput)
                     lg.listing_game(_gameData)
                     _wanted = input("Masukkan ID Game: ")   # Membeli game
-                    if(bg.beli(_wanted,_loggedUser, _possession, _gameData, _usersData, _history)):
-                        _history     = bg._ubahHistory(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-                        _gameData    = bg._ubahGameData(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-                        _loggedUser  = bg._ubahLoggedUsers(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-                        _usersData   = bg._ubahUsersData(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
-                        _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession, _gameData, _usersData, _history)
+                    if(bg.beli(_wanted, _loggedUser, _possession, _gameData, _usersData)):
+                        _history     = bg._ubahHistory(_wanted, _loggedUser, _gameData, _history)
+                        _gameData    = bg._ubahGameData(_wanted, _gameData)
+                        _loggedUser  = bg._ubahLoggedUsers(_wanted, _loggedUser, _gameData)
+                        _usersData   = bg._ubahUsersData(_wanted, _loggedUser, _gameData, _usersData)
+                        _possession  = bg._ubahPossession(_wanted, _loggedUser, _possession)
                     input("\nTekan enter untuk melanjutkan\n") 
                 elif command == "listgame":
                     fb.blit(_loggedUser, cmdInput)
@@ -224,7 +224,7 @@ running = True
 if __name__ == "__main__":   # Inti program
     data = loading.load()
     if data:    # apabila data tidak kosong atau dapat diproses
-        _usersData, _gameData, _history, _possession = data
+        _usersData, _gameData, _possession , _history = data
         fb.printWelcome()
         while running:
             mintaCommand()
