@@ -33,7 +33,7 @@ def load():
         else:
             print('Folder', sys.argv[1],'tidak ditemukan.')
 
-    elif len(sys.argv) == 1:
+    elif fd.len(sys.argv) == 1:
         print('Tidak ada nama folder yang diberikan. \"python BNMO.py <nama folder>\"')
 
     else:   # argumen lebih dari 2
