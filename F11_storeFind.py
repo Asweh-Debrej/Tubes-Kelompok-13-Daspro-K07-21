@@ -1,191 +1,162 @@
 import C01_fungsiDasar as fd
 
 def search_game_at_store(_gamedata):
-
-    _panjangGame= fd.len(_gamedata)
-    _idGame=input("Masukkan ID Game: ")
-    _nama=input("Masukkan Nama Game: ")
-    _harga= input("Masukkan Harga Game: ")
-    _kategori=input("Masukkan Kategori Game: ")
-    _tahunRilis= input("Masukkan Tahun Rilis Game: ")
-
+    k= fd.len(_gamedata)
+    str1=input("Masukkan ID Game: ")
+    str2=input("Masukkan Nama Game: ")
+    str3= input("Masukkan Harga Game: ")
+    str4=input("Masukkan Kategori Game: ")
+    str5= input("Masukkan Tahun Rilis Game: ")
 
     print("Daftar game pada toko yang memenuhi kriteria: ")
-     
-    _count=0
-    if(_idGame!=''):
-                    
-        for j in range (_panjangGame):
-            if(_idGame.lower() ==_gamedata[j][0].lower()):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-    elif(_nama!=''):
-                    
-        for j in range (_panjangGame):
-            if(_nama.lower() ==_gamedata[j][1].lower()):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-    
-    elif(_harga!='' and _kategori!='' and _tahunRilis!=''):
+    t=0
+    if(str1!=''):
+         for j in range (k):
+             if(str1.lower() ==_gamedata[j][0].lower()):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+    elif(str2!=''):
 
+         for j in range (k):
+             if(str2.lower() ==_gamedata[j][1].lower()):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+    elif(str3!='' and str4!='' and str5!=''):
+         for j in range (k):
+             if(str3 == str(_gamedata[j][4]) and str4.lower() ==_gamedata[j][2].lower() and str5 == str(_gamedata[j][3])):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
+    elif(str3!='' and str4!=''):
 
-        for j in range (_panjangGame):
-            if(_harga == str(_gamedata[j][4]) and _kategori.lower() ==_gamedata[j][2].lower() and _tahunRilis == str(_gamedata[j][3])):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+         for j in range (k):
+             if(str3 == str(_gamedata[j][4]) and str4.lower() ==_gamedata[j][2].lower()):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
-    elif(_harga!='' and _kategori!=''):
+    elif(str4!='' and str5!=''):
 
-        for j in range (_panjangGame):
-            if(_harga == str(_gamedata[j][4]) and _kategori.lower() ==_gamedata[j][2].lower()):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+         for j in range (k):
+             if(str4.lower() ==_gamedata[j][2].lower() and str5 == str(_gamedata[j][3])):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
-    elif(_kategori!='' and _tahunRilis!=''):
+    elif(str3!='' and str5!=''):
 
-        for j in range (_panjangGame):
-            if(_kategori.lower() ==_gamedata[j][2].lower() and _tahunRilis == str(_gamedata[j][3])):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+         for j in range (k):
+             if(str3 == str(_gamedata[j][4])) and str5 == str(_gamedata[j][3]):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
-    elif(_harga!='' and _tahunRilis!=''):
+    elif(str3!=''):
+         for j in range (k):
+             if(str3 == str(_gamedata[j][4])):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
+    elif(str4!=''):
+         for j in range (k):
+             if(str4.lower() == _gamedata[j][2].lower()):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
 
-        for j in range (_panjangGame):
-            if(_harga == str(_gamedata[j][4])) and _tahunRilis == str(_gamedata[j][3]):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-
-    elif(_harga!=''):
-        for j in range (_panjangGame):
-            if(_harga == str(_gamedata[j][4])):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-
-    elif(_kategori!=''):
-                    
-        for j in range (_panjangGame):
-            if(_kategori.lower() == _gamedata[j][2].lower()):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-
-    elif(_tahunRilis!=''):
-        for j in range (_panjangGame):
-            if(_tahunRilis ==str(_gamedata[j][3])):
-                print()
-                _count+=1
-                print(_count,end=". ")
-                print(_gamedata[j][0],end=" | ")
-                print(_gamedata[j][1],end=" | ")
-                print(_gamedata[j][2],end=" | ")
-                print(_gamedata[j][3],end=" | ")
-                print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-
+    elif(str5!=''):
+         for j in range (k):
+             if(str5 ==str(_gamedata[j][3])):
+                 print()
+                 t+=1
+                 print(t,end=". ")
+                 print(_gamedata[j][0],end=" | ")
+                 print(_gamedata[j][1],end=" | ")
+                 print(_gamedata[j][2],end=" | ")
+                 print(_gamedata[j][3],end=" | ")
+                 print(_gamedata[j][4],end="")
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
     else :
-        for j in range (_panjangGame):
-            print()
-            _count+=1
-            print(_count,end=". ")
+         for j in range (k):
+            t+=1
+            print(t,end=". ")
             print(_gamedata[j][0],end=" | ")
             print(_gamedata[j][1],end=" | ")
             print(_gamedata[j][2],end=" | ")
             print(_gamedata[j][3],end=" | ")
             print(_gamedata[j][4],end="")
-                    
-        if(_count==0):
-            print()
-            print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
-            
-      
-
-
-
-
+         if(t==0):
+             print()
+             print("Tidak ada game pada toko yang memenuhi kriteria.",end="")
             
       
 
