@@ -16,7 +16,7 @@ def askName():
     
     Mengembalikan nama yang sudah valid"""
     name = fd.strip(input("Masukkan nama : "))
-    if not name:
+    if name == '':
         print("Nama tidak boleh kosong!")
         askName()
 
@@ -31,7 +31,7 @@ def askUName(usedUName):
     for i in uName:
         if fd.find(_uNameChars, i) == -1:
             valid = False
-    if not uName:
+    if uName == '':
         print("Username tidak boleh kosong!")
         uName = askUName(usedUName)
     elif not valid:

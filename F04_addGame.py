@@ -5,7 +5,7 @@ def askGName(_gameData):
     
     Mengembalikan nama game yang sudah valid."""
     gName = fd.strip(input("Nama game : "))
-    if not gName:
+    if gName == '':
         print("Nama game tidak boleh kosong!")
         gName = askGName(_gameData)
     elif fd.mtrxFind(_gameData, gName, 1) != -1:
@@ -20,7 +20,7 @@ def askCategory():
     
     Mengembalikan nama kategori yang sudah valid."""
     category = fd.strip(input("Kategori : "))
-    if not category:
+    if category == '':
         print("Kategori tidak boleh kosong!")
         category = askCategory()
 
@@ -35,7 +35,7 @@ def askRelease():
     try:
         releaseYear = int(releaseYear)
     except:
-        if not releaseYear:
+        if releaseYear == '':
             releaseYear = 2022
             print("Tahun diatur menjadi {}.".format(releaseYear))
         else:
@@ -57,7 +57,7 @@ def askPrice():
     try:
         price = int(price)
     except:
-        if not price or price.lower == "gratis" or price.lower == "free":
+        if price == '' or price.lower == "gratis" or price.lower == "free":
             price = 0
             print("Harga diatur menjadi {} (gratis).".format(price))
         else:
@@ -79,7 +79,7 @@ def askStock():
     try:
         stock = int(stock)
     except:
-        if not stock:
+        if stock == '':
             stock = 0
             print("Stok diatur menjadi {}.".format(stock))
         else:

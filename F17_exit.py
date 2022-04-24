@@ -20,8 +20,9 @@ def exit(_usersData, _gameData, _history, _possession, loggedIn):
 
     if fd.find(['y', 'yes', 'ya'], save.lower()) != -1:
         cari = input("Masukkan nama folder penyimpanan : ")
-        if not cari:
+        if cari == '':
             print("Nama folder penyimpanan tidak bisa kosong!")
+            cari = input("Masukkan nama folder penyimpanan : ")
         print("")
         print("Saving")
         sv.simpan(_possession, "kepemilikan", cari)

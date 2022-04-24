@@ -8,7 +8,7 @@ def askID(_usersData):
     Input = fd.strip(input("""Masukkan id pengguna. Ketik "uname" untuk menggunakan username pengguna
     
         ID : """))
-    if not Input:
+    if Input == '':
         print("ID tidak bisa kosong!")
         Input, Type = askID(_usersData)
     elif Input.lower() == "uname":
@@ -28,7 +28,7 @@ def askUName(_usersData):
     Input = fd.strip(input("""Masukkan username pengguna. Ketik "id" untuk menggunakan ID pengguna
 
         Username : """))
-    if not Input:
+    if Input == '':
         print("Username tidak bisa kosong!")
         Input, Type = askUName(_usersData)
     elif Input.lower() == "id":
@@ -50,7 +50,7 @@ def askAmount(_usersData, person, Type):
     try:
         amount = int(amount)
     except:
-        if not amount:
+        if amount == '':
             amount = 0
         else:
             print("Masukan hanya boleh berbentuk bilangan bulat!")
@@ -65,7 +65,7 @@ def askAmount(_usersData, person, Type):
             print("Jumlah yang dikurangi melebihi saldo yang dimiliki!")
             amount = askAmount(_usersData, person, Type)
 
-        return amount
+    return amount
 
 
 def topup(_usersData):
