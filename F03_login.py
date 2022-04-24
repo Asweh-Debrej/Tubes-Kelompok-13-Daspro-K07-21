@@ -1,5 +1,6 @@
 import C01_fungsiDasar as fd
 import B01_cipher as cp
+import time # design
 
 def login(_usersData):
     # menerima dan memvalidasi input username dan input password agar dapat mengakses binomo
@@ -22,7 +23,7 @@ def login(_usersData):
                 _loggedUser[5] = _usersData[i][5]
 
                 print('Halo', _loggedUser[2], '! Selamat datang di "Binomo".')
-                print("Anda memiliki saldo sebesar", _loggedUser[5])
+                time.sleep(2)
             
                 return _loggedUser
 
